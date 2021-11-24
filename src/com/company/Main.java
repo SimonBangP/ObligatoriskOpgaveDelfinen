@@ -7,5 +7,7 @@ public class Main {
 
 
         System.out.println("Heeej");
+
+        System.out.println("Hej fra Mohammad");
     }
 }
