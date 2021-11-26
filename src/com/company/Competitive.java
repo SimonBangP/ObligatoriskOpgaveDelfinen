@@ -8,7 +8,7 @@ public class Competitive  extends Member{
     protected String date;
     protected int distance;
 
-    public Competitive(String surName, String lastName, int age, int phoneNumber, String email, int subscriptionAmount) {
+    public Competitive(String surName, String lastName, int age, int phoneNumber, String email, int subscriptionAmount, String discipline, int distance, double bestTime, String date) {
         super(surName, lastName, age, phoneNumber, email, subscriptionAmount);
         this.discipline = discipline;
         this.bestTime = bestTime;
@@ -53,8 +53,9 @@ public class Competitive  extends Member{
     public String toString() {
         return super.toString() +
                 "discipline= " + discipline +
-                ", bestTime= " + bestTime +
-                ", date= " + date +
-                ", distance= " + distance;
+                ", distance= " + distance + "Meter" +
+                ", bestTime= " + bestTime + "MM/SS" +
+                ", date= " + date;
+
     }
 }
