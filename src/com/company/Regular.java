@@ -14,4 +14,12 @@ public class Regular extends Member{
     public String toString() {
         return super.toString()+" activityForm=" + activityForm;
     }
+
+    public String getActivityForm() {
+        return activityForm;
+    }
+
+    public void setActivityForm(String activityForm) {
+        this.activityForm = activityForm;
+    }
 }
