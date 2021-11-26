@@ -51,11 +51,10 @@ public class Competitive  extends Member{
 
     @Override
     public String toString() {
-        return super.toString() + "Competitive{" +
-                "discipline='" + discipline + '\'' +
-                ", bestTime=" + bestTime +
-                ", date='" + date + '\'' +
-                ", distance=" + distance +
-                '}';
+        return super.toString() +
+                "discipline= " + discipline +
+                ", bestTime= " + bestTime +
+                ", date= " + date +
+                ", distance= " + distance;
     }
 }
