@@ -16,7 +16,11 @@ public static void main(String[] args) {
 
 
         newMember.add(Simon);
+        newCompMember.add(Nikolaj);
 
+        TrainingResultManager resultManager = new TrainingResultManager();
+
+        resultManager.updateBestTime(newCompMember);
 
     }
 }
