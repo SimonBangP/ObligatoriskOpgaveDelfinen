@@ -9,6 +9,7 @@ public class Competitive extends Member {
     protected int distance;
 
     public Competitive(String discipline, double bestTime, String date, int distance) {
+      super();
         this.discipline = discipline;
         this.bestTime = bestTime;
         this.date = date;
