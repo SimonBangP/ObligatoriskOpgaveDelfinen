@@ -1,4 +1,4 @@
 package com.company;
 
-public class Medlem {
+public class Regular {
 }
