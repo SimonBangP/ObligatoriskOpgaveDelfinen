@@ -2,19 +2,19 @@
 
 package com.company;
 
-public class Competitive extends Member {
+public class Competitive  {
     protected String discipline;
     protected double bestTime;
     protected String date;
     protected int distance;
 
-    public Competitive(String discipline, double bestTime, String date, int distance) {
-      super();
+  /*  public Competitive(String discipline, double bestTime, String date, int distance) {
+
         this.discipline = discipline;
         this.bestTime = bestTime;
         this.date = date;
         this.distance = distance;
-    }
+    }*/
 
     public String getDiscipline() {
         return discipline;
