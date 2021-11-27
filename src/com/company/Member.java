@@ -1,10 +1,8 @@
 package com.company;
 
-import java.security.PublicKey;
-
 public class Member {
 
-protected String surName;
+protected String firstName;
 protected String lastName;
 protected int age;
 protected int phoneNumber;
@@ -12,7 +10,7 @@ protected String email;
 protected int subscriptionAmount;
 
 public Member(String surName, String lastName, int age, int phoneNumber, String email, int subscriptionAmount){
-this.surName = surName;
+this.firstName = surName;
 this.lastName = lastName;
 this.age = age;
 this.phoneNumber = phoneNumber;
@@ -22,7 +20,7 @@ this.subscriptionAmount = subscriptionAmount;
 
     @Override
     public String toString() {
-        return "surName= " + surName  +
+        return "surName= " + firstName +
                 ", lastName= '" + lastName +
                 ", age= " + age +
                 ", phoneNumber= " + phoneNumber +
@@ -30,12 +28,12 @@ this.subscriptionAmount = subscriptionAmount;
                 ", subscriptionAmount= " + subscriptionAmount;
     }
 
-    public String getSurName() {
-        return surName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setSurName(String surName) {
-        this.surName = surName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {

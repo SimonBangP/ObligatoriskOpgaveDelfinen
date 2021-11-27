@@ -7,7 +7,7 @@ public class TrainingResultManager {
     public void updateBestTime(ArrayList<Competitive> newCompMember){
         Scanner scan = new Scanner(System.in);
         for(int i = 0; i < newCompMember.size(); i++){
-            System.out.println((i+ 1)+": "+newCompMember.get(i).getSurName()+
+            System.out.println((i+ 1)+": "+newCompMember.get(i).getFirstName()+
                     newCompMember.get(i).getLastName()+newCompMember.get(i).getDiscipline()+
                     newCompMember.get(i).getDistance());
         }

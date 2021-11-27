@@ -2,11 +2,14 @@ package com.company;
 
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
 
 public static void main(String[] args) {
+        MemberManager createMember = new MemberManager();
+        Scanner console = new Scanner(System.in);
         ArrayList<Member> newMember = new ArrayList<Member>();
         ArrayList<Competitive> newCompMember = new ArrayList<>();
         ArrayList<Regular> newRegMember = new ArrayList<>();
@@ -17,6 +20,7 @@ public static void main(String[] args) {
 
         newMember.add(Simon);
 
+        createMember.createMember(console, newMember, newCompMember, newRegMember);
 
     }
 }
