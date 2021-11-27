@@ -53,8 +53,9 @@ public class Competitive  extends Member{
     public String toString() {
         return super.toString() +
                 "discipline= " + discipline +
-                ", distance= " + distance + "Meter" +
-                ", bestTime= " + bestTime + "MM/SS" +
+
+                ", distance(Meter)= " + distance + //"Meter" +
+                ", bestTime(MM/SS)= " + bestTime + //"MM/SS" +
                 ", date= " + date;
 
     }
