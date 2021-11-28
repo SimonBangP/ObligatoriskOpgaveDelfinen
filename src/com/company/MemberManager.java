@@ -43,9 +43,43 @@ public class MemberManager {
             age = console.nextInt();
 
         }
-        //newMember = (firstName, lastName, age,email,subscriptionAmount);
         Member createNewMember = new Member(firstName, lastName, age, phoneNumber, email, subscriptionAmount);
         newMember.add(createNewMember);
+
+        System.out.println("Perfect, now you have filled out most of it. Now you should choose if the member is a regular swimmer or a competitive");
+        System.out.println("Enter regular or competitive");
+        String swimmerAnswer = console.next();
+
+        if (swimmerAnswer.equals("regular")){
+            System.out.println("Please enter the members activity form. It should be either passive or active");
+            String activityForm = console.next();
+        Regular createRegMember = new Regular(firstName, lastName, age, phoneNumber, email, subscriptionAmount, activityForm);
+        newRegMember.add(createRegMember);
+
+
+        } else if (swimmerAnswer.equals("competitive")){
+            System.out.println("Please enter the dicipline that the current swimmer is swimming. Either butterfly, back crawl, breast or crawl");
+            String dicipline = console.next();
+
+            System.out.println("Please enter the distance that the swimmer is swimming in the chosed dicipline ");
+            int distance = console.nextInt();
+
+            System.out.println("please enter the currently best time the swimmer have been swimming so far (MM/SS) ex. 02.35");
+            double bestTime = console.nextDouble();
+
+            System.out.println("Please enter the date where the best time is from (DD/MM/YY");
+            String date = console.next();
+
+            Competitive createCompMember = new Competitive(firstName, lastName, age, phoneNumber, email, subscriptionAmount, dicipline, distance, bestTime, date);
+
+        } else {
+            System.out.println("The entered are not correct, please try again");
+            swimmerAnswer = console.next(); 
+
+
+        }
+
+
 
     }
 
