@@ -11,7 +11,8 @@ public class MemberManager {
         System.out.println("In the following you will be able to add a member to the 'svømmeklubben Delfinen'\n" +
                 "You would be asked to enter: Sur name, last name, age, phonenumber and email Account\n\n" +
                 "The System will set that amount you should pay in subscription through your age\n" +
-                "When you have inserted all information above you should choose if the member is a regular swimmer or competitive\n\n");
+                "When you have inserted all information above you should choose if the member is a regular swimmer or competitive\n\n+ " +
+                "*****************************\n\n");
 
         System.out.println("Please enter your first name");
         String firstName = console.next();
