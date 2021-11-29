@@ -7,14 +7,16 @@ protected String lastName;
 protected int age;
 protected int phoneNumber;
 protected String email;
+protected String activityForm;
 protected int subscriptionAmount;
 
-public Member(String surName, String lastName, int age, int phoneNumber, String email, int subscriptionAmount){
-this.firstName = surName;
+public Member(String firtName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount){
+this.firstName = firstName;
 this.lastName = lastName;
 this.age = age;
 this.phoneNumber = phoneNumber;
 this.email = email;
+this.activityForm = activityForm;
 this.subscriptionAmount = subscriptionAmount;
 }
 

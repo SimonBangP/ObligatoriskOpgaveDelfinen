@@ -2,12 +2,12 @@ package com.company;
 
 public class Regular extends Member{
 
-    protected String activityForm;
+    //protected String activityForm;
 
 
-    public Regular(String firstName, String lastName, int age, int phoneNumber, String email, int subscriptionAmount, String activityForm) {
-        super(firstName, lastName, age, phoneNumber, email, subscriptionAmount);
-        this.activityForm = activityForm;
+    public Regular(String firstName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount /*,String activityForm*/) {
+        super(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
+        //this.activityForm = activityForm;
     }
 
     @Override
@@ -19,7 +19,7 @@ public class Regular extends Member{
         return activityForm;
     }
 
-    public void setActivityForm(String activityForm) {
+   /* public void setActivityForm(String activityForm) {
         this.activityForm = activityForm;
-    }
+    }*/
 }
