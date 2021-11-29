@@ -35,15 +35,15 @@ this.subscriptionAmount = subscriptionAmount;
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    this.firstName = firstName;
     }
 
     public String getLastName() {
-        return lastName;
+    return lastName;
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+    this.lastName = lastName;
     }
 
     public int getAge() {
@@ -51,7 +51,7 @@ this.subscriptionAmount = subscriptionAmount;
     }
 
     public void setAge(int age) {
-        this.age = age;
+    this.age = age;
     }
 
     public int getPhoneNumber() {
@@ -59,7 +59,7 @@ this.subscriptionAmount = subscriptionAmount;
     }
 
     public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {
@@ -67,7 +67,7 @@ this.subscriptionAmount = subscriptionAmount;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+    this.email = email;
     }
 
     public int getSubscriptionAmount() {
@@ -75,7 +75,7 @@ this.subscriptionAmount = subscriptionAmount;
     }
 
     public void setSubscriptionAmount(int subscriptionAmount) {
-        this.subscriptionAmount = subscriptionAmount;
+    this.subscriptionAmount = subscriptionAmount;
     }
 }
 

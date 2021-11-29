@@ -19,15 +19,16 @@ public class MemberManager {
         System.out.println("Please enter your last name");
         String lastName = console.next();
 
-        do {
+
             System.out.println("Please enter your age");
             age = console.nextInt();
 
-        }
-            while (age < 0 || age > 120);
-            System.out.println("The age is not valid, please enter age again");
-            age = console.nextInt();
 
+            while ( !(age > 0 && age < 120)) {
+                System.out.println("The age is not valid, please enter age again");
+                age = console.nextInt();
+
+            }
 
 
 
@@ -42,6 +43,12 @@ public class MemberManager {
 
         System.out.println("Please enter your activity form. It could either be active or passive");
         String activityForm = console.next();
+
+        while (!(activityForm.equals("active")) && !(activityForm.equals("passive"))){
+            System.out.println("The entered activity form is not valid. Pleaser enter active or passive");
+            activityForm = console.next();
+
+        }
 
         if (activityForm.equals("passive")){
             subscriptionAmount = 500;
@@ -58,15 +65,11 @@ public class MemberManager {
             } else if (age > 60) {
                 subscriptionAmount = ((1600 / 100) * 75);
 
-            } /*else {
-                System.out.println("Age is not valid, please try again");
-                age = console.nextInt();
+            }
 
-            }*/
-
-        } else {
+        } /*else {
             System.out.println("The entered are not valid, please try again");
-        }
+        }*/
 
         Member createNewMember = new Member(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
         newMember.add(createNewMember);
@@ -74,6 +77,21 @@ public class MemberManager {
         System.out.println("Perfect, now you have filled out most of it. Now you should choose if the member is a regular swimmer or a competitive");
         System.out.println("Enter regular or competitive");
         String swimmerAnswer = console.next();
+
+        while (!(swimmerAnswer.equals("regular"))&& !(swimmerAnswer.equals("competitive"))){
+            System.out.println("The entered is not a membertype\n" + "Enter 1 is the member is a regular swimmer\n"
+                    + " Enter 2 if the member is a competitive swimmer");
+            int memberType = console.nextInt();
+            if (memberType == 1){
+                swimmerAnswer = "regular";
+            }
+            if (memberType == 2){
+                swimmerAnswer = "competitive";
+            }
+
+
+        }
+
 
         if (swimmerAnswer.equals("regular")){
             System.out.println("Please enter the members activity form. It should be either passive or active");
