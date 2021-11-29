@@ -5,7 +5,7 @@ import java.util.*;
 public class TrainingResultManager {
 // tilføj at forloopet også indhenter gamle bedste tid. Mellem mellem "+'er"
     public void updateBestTime(Scanner console,ArrayList<Competitive> newCompMember){
-        //Scanner scan = new Scanner(System.in);
+
         for(int i = 0; i < newCompMember.size(); i++){
             System.out.println((i+ 1)+": "+newCompMember.get(i).getFirstName()+" "+
                     newCompMember.get(i).getLastName()+" "+newCompMember.get(i).getDiscipline()+" "+
