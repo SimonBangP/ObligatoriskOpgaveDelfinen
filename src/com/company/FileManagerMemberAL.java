@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileManagerMemberAL {
-
+//Heeeej hej
     File memberFile = new File("Members.txt");
     public void writeprivateRentalToFile(ArrayList<Member> members, File memberFile) throws FileNotFoundException{
 
