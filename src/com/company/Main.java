@@ -8,9 +8,14 @@ public class Main {
 
 
 public static void main(String[] args) {
+
         MemberManager createMember = new MemberManager();
+        ListManager listManager = new ListManager();
+
+
         Scanner console = new Scanner(System.in);
-        ArrayList<Member> newMember = new ArrayList<Member>();
+
+        /*ArrayList<Member> newMember = new ArrayList<Member>();
         ArrayList<Competitive> newCompMember = new ArrayList<>();
         ArrayList<Regular> newRegMember = new ArrayList<>();
 
@@ -18,9 +23,9 @@ public static void main(String[] args) {
         Competitive Martin = new Competitive("Martin", "Smith", 38, 123456, "msmith@dasdas", 1600, "Crawl", 800, 05.10, "25/11-21" );
         Regular Mo = new Regular("Mo", "Stack", 32, 988775, "moStack@gam", 500, "Passive");
 
-        newMember.add(Simon);
+        newMember.add(Simon);*/
 
-        createMember.createMember(console, newMember, newCompMember, newRegMember);
+        createMember.createMember(console, ListManager.newMember, ListManager.newCompMember, ListManager.newRegMember);
 
 
 
