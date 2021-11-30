@@ -121,7 +121,7 @@ public class MemberManager {
 
         }
     }
-    public void changeMember (Scanner console, ArrayList<Member> newMember, ArrayList<Competitive> newCompMember, ArrayList<Regular> newRegMember){
+    public void changeMember (Scanner console, ArrayList<Member> newMember){
         System.out.println("You have chosen that you want to change some information on a member.");
         for (int i = 0; i < newMember.size(); i++){
             System.out.println("member number" + (i + 1) + " " + newMember.get(i));
@@ -129,6 +129,110 @@ public class MemberManager {
         System.out.println("Which member to you want to make changes on? Enter the membernumber ");
         int changeAnswer = console.nextInt();
         System.out.println(newMember.get(changeAnswer-1));
+
+        System.out.println("Which information do you want change?+ " +
+                "If you want to change first name, please enter 1 \n" +
+                "If you want to change last name, please enter 2 \n +" +
+                "If you want to change age, please enter 3 \n + " +
+                "If you want to change phone number, please enter 4 \n + " +
+                "If you want to change email, please enter 5 \n + " +
+                "If you want to change activity form, please enter 6  ");
+
+        int changeInformation = console.nextInt();
+
+        switch (changeInformation){
+
+            case 1:
+                System.out.println("Please enter the new first name ");
+                String firstName = console.next();
+                newMember.get(changeAnswer - 1).setFirstName(firstName);
+
+                break;
+
+            case 2:
+                System.out.println("Please enter the new last name");
+                String lastName = console.next();
+                newMember.get(changeAnswer - 1).setLastName(lastName);
+                break;
+
+            case 3:
+                System.out.println("Please enter the new age");
+                int age = console.nextInt();
+                newMember.get(changeAnswer - 1).setAge(age);
+                if (age < 18){
+                    newMember.get(changeAnswer - 1).setSubscriptionAmount(1000);
+                }else if (age > 18 && age <60){
+                    newMember.get(changeAnswer - 1).setSubscriptionAmount(1600);
+                }else if (age > 60){
+                    newMember.get(changeAnswer - 1).setSubscriptionAmount((1600/100)*75);
+
+                }
+
+                break;
+
+            case 4:
+                System.out.println("Please enter the new phone number");
+                int phoneNumber = console.nextInt();
+                newMember.get(changeAnswer - 1).setSubscriptionAmount(phoneNumber);
+                break;
+
+            case 5:
+                System.out.println("Please enter the new Email");
+                String email = console.next();
+                newMember.get(changeAnswer - 1 ).setEmail(email);
+                break;
+
+            case 6:
+                System.out.println("Please enter the new activity form");
+                String activityForm = console.next();
+                while (!(activityForm.equals("active")&& !(activityForm.equals("passive")))){
+                    System.out.println("The entered activity form is not valid, please enter again");
+                    activityForm = console.next();
+                }
+                if (activityForm.equals("passive")){
+                    newMember.get(changeAnswer - 1).setSubscriptionAmount(500);
+
+                }
+
+
+                break;
+
+            default:
+
+                break;
+
+
+        }
+
+    }
+
+
+    public void deleteMember (Scanner console, ArrayList<Member> member, ArrayList<Regular> regularMember, ArrayList<Competitive> compMember){
+        System.out.println("Here you will be able to delete a member from the list and file. You should choose from which membertype you want to delete" +
+                "You can choose: member, regular or competitive");
+
+        System.out.println("Please enter the member type you want to delete");
+        String memberType = console.next();
+
+        while (!(memberType.toLowerCase().equals("member"))&& !(memberType.equals("regular"))&& !(memberType.equals("competitive"))){
+            System.out.println("The entered is not a valid membertype, please try again");
+            memberType = console.next();
+
+        }
+
+        if (memberType.toLowerCase().equals("member")){
+            for (int i = 0; i < member.size(); i++){
+                System.out.println("Member number " + (i + 1) + ": \n" +  member.get(i));
+
+            }
+
+        } else if (memberType.toLowerCase().equals("regular")){
+
+        } else {
+
+
+        }
+
 
 
 
