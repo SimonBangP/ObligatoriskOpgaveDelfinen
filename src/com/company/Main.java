@@ -23,7 +23,8 @@ public static void main(String[] args) {
         listManager.newRegMember.add(Liz);
         listManager.newMember.add(John);
 
-        subscriptionManager.getSubscriptionSum(listManager.newMember);
+        System.out.println(subscriptionManager.getSubscriptionSum(listManager.newMember,
+            listManager.newCompMember,listManager.newRegMember));
 
         Scanner console = new Scanner(System.in);
 
