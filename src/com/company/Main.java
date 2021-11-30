@@ -18,35 +18,40 @@ public static void main(String[] args) throws FileNotFoundException {
         Member Kim = new Member("Kim", "Larsen",62, 34873847,"Kim@lol.com", "active", 1200);
         Regular Liz = new Regular("Liz","Smith", 35, 34748569, "Liz@lol.com","active", 1600, 3, "crawl");
         Member John = new Member("John", "Smith", 52, 36363636, "John@lol.com","Passive",500);
+        Competitive Simon = new Competitive("Simon","Bang",25,22334455,"simon@simon.dk","Active", 1600, "Butterfly", 600);
+        Competitive Mo = new Competitive("Mo", "Stacks", 31, 33445566, "mo@mo.dk", "Active", 1600, "Chest", 800);
 
         listManager.newMember.add(Kim);
         listManager.newCompMember.add(Bob);
         listManager.newRegMember.add(Liz);
         listManager.newMember.add(John);
+        listManager.newCompMember.add(Simon);
+        listManager.newCompMember.add(Mo);
+
 
         System.out.println(subscriptionManager.getSubscriptionSum(listManager.newMember,
             listManager.newCompMember,listManager.newRegMember));
 
         Scanner console = new Scanner(System.in);
-
+/*
         //createMember.createMember(console, listManager.newMember, listManager.newCompMember, listManager.newRegMember);
 
 
 
+*/
 
 
-
-
+    FileManagerCompetitive competitiveFileManager = new FileManagerCompetitive();
         //Mo's test områdde
     //Create a test member
-    createMember.createMember(console, listManager.newMember, listManager.newCompMember, listManager.newRegMember);
+    //createMember.createMember(console, listManager.newMember, listManager.newCompMember, listManager.newRegMember);
     //update his/her results list
     TrainingResultManager resultManager = new TrainingResultManager();
     resultManager.updateBestTime(console, listManager.newCompMember);
     resultManager.updateBestTime(console, listManager.newCompMember);
     resultManager.updateBestTime(console, listManager.newCompMember);
     //print to file to see result
-    FileManagerCompetitive competitiveFileManager = new FileManagerCompetitive();
+
     competitiveFileManager.writeToFile(competitiveFileManager.competitiveMembersFile, listManager.newCompMember);
 
 

@@ -4,6 +4,8 @@ import java.util.*;
 
 public class TrainingResultManager {
 
+    //
+
     //En arraylist over tider
     ArrayList<Double> bestTimes = new ArrayList<>();
     ArrayList<String> dates = new ArrayList<>();
@@ -34,7 +36,7 @@ public class TrainingResultManager {
 
         //System.out.println(newCompMember.get(indexOfCompetitive - 1));
 
-        String result = bestTime+" "+date;
+        String result = bestTime+"\t"+date;
 
         newCompMember.get(indexOfCompetitive - 1).bestTimes.add(result);
 
