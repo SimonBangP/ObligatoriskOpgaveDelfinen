@@ -2,35 +2,34 @@ package com.company;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-//import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileManagerMemberAL {
-//Heeeej hej
-    File memberFile = new File("Members.txt");
-    public void writeprivateRentalToFile(ArrayList<Member> members, File memberFile) throws FileNotFoundException{
+
+    File memberFile = new File("Member.txt");
+    public void writeMemberToFile(ArrayList<Member> member, File memberFile) throws FileNotFoundException{
 
         PrintStream writeToMembersFile = new PrintStream(memberFile);
 
-        for (int i = 0; i < members.size(); i++) {
+        for (int i = 0; i < member.size(); i++) {
 
-            String firstName = members.get(i).firstName;
-            String lastName = members.get(i).lastName;
-            int age = members.get(i).age;
-            int phoneNumber = members.get(i).phoneNumber;
-            String email = members.get(i).email;
-            String activityform = members.get(i).activityForm;
-            int subscriptionamount = members.get(i).subscriptionAmount;
+            String firstName = member.get(i).firstName;
+            String lastName = member.get(i).lastName;
+            int age = member.get(i).age;
+            int phoneNumber = member.get(i).phoneNumber;
+            String email = member.get(i).email;
+            String activityform = member.get(i).activityForm;
+            int subscriptionamount = member.get(i).subscriptionAmount;
 
 
             writeToMembersFile.println(firstName + " " + lastName + " " + age + " " + phoneNumber + " " +
                     email + " " + activityform + " " + subscriptionamount);
         }
     }
-    public void readPrivateRentalFile (ArrayList<Member> members, File memberFile) throws FileNotFoundException {
-        Scanner read = new Scanner(new File("Members.txt"));
+    public void readMemberFile (ArrayList<Member> members, File memberFile) throws FileNotFoundException {
+        Scanner read = new Scanner(new File("Member.txt"));
 
         while (read.hasNextLine()) {
             String line = read.nextLine();
