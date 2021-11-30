@@ -11,8 +11,8 @@ public class SubscriptionManager {
     //traverserer hvert Arraylist og returnerer summen af alle kontingenter
     public int getSubscriptionSum(ArrayList<Member> newMember, ArrayList<Competitive> newCompMember, ArrayList<Regular> newRegMember) {
         for (int i = 0; i < newMember.size(); i++) {
-            int a = newMember.get(i).getSubscriptionAmount();
-            sum1 += a;
+            int membershipFee = newMember.get(i).getSubscriptionAmount();
+            sum1 += membershipFee;
         }
         for (int i = 0; i < newCompMember.size(); i++) {
            int b =  newCompMember.get(i).getSubscriptionAmount();

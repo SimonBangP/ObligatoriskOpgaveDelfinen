@@ -20,18 +20,16 @@ public class MemberManager {
         System.out.println("Please enter your last name");
         String lastName = console.next();
 
-        do {
+
             System.out.println("Please enter your age");
             age = console.nextInt();
 
+
+            while ( !(age > 0 && age < 120)) {
+                System.out.println("The age is not valid, please enter age again");
+                age = console.nextInt();
+
         }
-            while (age < 0 || age > 120);
-            System.out.println("The age is not valid, please enter age again");
-            age = console.nextInt();
-
-
-
-
 
         System.out.println("Please enter your Phonenumber");
         int phoneNumber = console.nextInt();
@@ -43,6 +41,12 @@ public class MemberManager {
 
         System.out.println("Please enter your activity form. It could either be active or passive");
         String activityForm = console.next();
+
+        while (!(activityForm.equals("active")) && !(activityForm.equals("passive"))){
+            System.out.println("The entered activity form is not valid. Pleaser enter active or passive");
+            activityForm = console.next();
+
+        }
 
         if (activityForm.equals("passive")){
             subscriptionAmount = 500;
@@ -59,15 +63,9 @@ public class MemberManager {
             } else if (age > 60) {
                 subscriptionAmount = ((1600 / 100) * 75);
 
-            } /*else {
-                System.out.println("Age is not valid, please try again");
-                age = console.nextInt();
+            }
 
-            }*/
-
-        } else {
-            System.out.println("The entered are not valid, please try again");
-        }
+    }
 
         Member createNewMember = new Member(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
         newMember.add(createNewMember);
@@ -76,10 +74,29 @@ public class MemberManager {
         System.out.println("Enter regular or competitive");
         String swimmerAnswer = console.next();
 
+        while (!(swimmerAnswer.equals("regular"))&& !(swimmerAnswer.equals("competitive"))){
+            System.out.println("The entered is not a membertype\n" + "Enter 1 is the member is a regular swimmer\n"
+                    + " Enter 2 if the member is a competitive swimmer");
+            int memberType = console.nextInt();
+            if (memberType == 1){
+                swimmerAnswer = "regular";
+            }
+            if (memberType == 2){
+                swimmerAnswer = "competitive";
+            }
+
+        }
+
+
         if (swimmerAnswer.equals("regular")){
-            System.out.println("Please enter the members activity form. It should be either passive or active");
-            //String activityForm = console.next();
-        Regular createRegMember = new Regular(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount/*, activityForm*/);
+            System.out.println("Please enter how many times the member approximately are going to swim per week");
+            int swimPerWeek = console.nextInt();
+
+            System.out.println("Please enter which of the four disciplines that is the members favourite");
+            String favouriteDiscipline = console.next();
+
+
+        Regular createRegMember = new Regular(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, swimPerWeek, favouriteDiscipline);
         newRegMember.add(createRegMember);
 
 
@@ -102,8 +119,16 @@ public class MemberManager {
             System.out.println("The entered are not correct, please try again");
             swimmerAnswer = console.next();
 
-
         }
+    }
+    public void changeMember (Scanner console, ArrayList<Member> newMember, ArrayList<Competitive> newCompMember, ArrayList<Regular> newRegMember){
+        System.out.println("You have chosen that you want to change some information on a member.");
+        for (int i = 0; i < newMember.size(); i++){
+            System.out.println("member number" + (i + 1) + " " + newMember.get(i));
+        }
+        System.out.println("Which member to you want to make changes on? Enter the membernumber ");
+        int changeAnswer = console.nextInt();
+        System.out.println(newMember.get(changeAnswer-1));
 
 
 
