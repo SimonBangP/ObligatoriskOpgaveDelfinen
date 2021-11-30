@@ -38,7 +38,7 @@ public class TrainingResultManager {
 
         newCompMember.get(indexOfCompetitive - 1).bestTimes.add(result);
 
-
+//change
 
     }
 }
