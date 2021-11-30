@@ -15,17 +15,9 @@ public static void main(String[] args) {
 
         Scanner console = new Scanner(System.in);
 
-        /*ArrayList<Member> newMember = new ArrayList<Member>();
-        ArrayList<Competitive> newCompMember = new ArrayList<>();
-        ArrayList<Regular> newRegMember = new ArrayList<>();
 
-        Member Simon = new Member("Simon", "bang", 25, 12345, "sbp@gagag", 1600);
-        Competitive Martin = new Competitive("Martin", "Smith", 38, 123456, "msmith@dasdas", 1600, "Crawl", 800, 05.10, "25/11-21" );
-        Regular Mo = new Regular("Mo", "Stack", 32, 988775, "moStack@gam", 500, "Passive");
 
-        newMember.add(Simon);*/
-
-        createMember.createMember(console, ListManager.newMember, ListManager.newCompMember, ListManager.newRegMember);
+        createMember.createMember(console, listManager.newMember, listManager.newCompMember, listManager.newRegMember);
 
 
 
