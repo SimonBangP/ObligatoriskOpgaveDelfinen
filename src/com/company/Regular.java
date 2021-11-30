@@ -4,7 +4,7 @@ public class Regular extends Member {
 
     //protected String activityForm;
     protected int swimsPerWeek;
-    protected String favouriteDicipline;
+    protected String favouriteDiscipline;
 
 
     public Regular(String firstName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, int swimsPerWeek, String favouriteDicipline) {
