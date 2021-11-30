@@ -229,6 +229,7 @@ public class MemberManager {
         } else if (memberType.toLowerCase().equals("regular")){
 
         } else {
+            System.out.println();
 
 
         }
