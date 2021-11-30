@@ -97,7 +97,7 @@ public class MemberManager {
         if (swimmerAnswer.equals("regular")){
             System.out.println("Please enter the members activity form. It should be either passive or active");
             //String activityForm = console.next();
-        Regular createRegMember = new Regular(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount/*, activityForm*/);
+        Regular createRegMember = new Regular(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, 3, "Butterfly");
         newRegMember.add(createRegMember);
 
 
