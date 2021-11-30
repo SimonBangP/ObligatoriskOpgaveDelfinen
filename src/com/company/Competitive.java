@@ -8,8 +8,8 @@ public class Competitive  extends Member{
     protected String date;
     protected int distance;
 
-    public Competitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, String discipline, int distance, double bestTime, String date) {
-        super(firsName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
+    public Competitive(String firstName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, String discipline, int distance, double bestTime, String date) {
+        super(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
         this.discipline = discipline;
         this.bestTime = bestTime;
         this.date = date;
