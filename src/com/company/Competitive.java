@@ -2,18 +2,22 @@
 
 package com.company;
 
+import java.util.*;
+
 public class Competitive  extends Member{
     protected String discipline;
-    protected double bestTime;
-    protected String date;
+    //protected double bestTime;
+    //protected String date;
     protected int distance;
+    ArrayList<String> bestTimes;
 
-    public Competitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, String discipline, int distance, double bestTime, String date) {
+    public Competitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, String discipline, int distance/*, double bestTime, String date*/) {
         super(firsName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
         this.discipline = discipline;
-        this.bestTime = bestTime;
-        this.date = date;
+        //this.bestTime = bestTime;
+        //this.date = date;
         this.distance = distance;
+        bestTimes = new ArrayList<>();
     }
 
 
@@ -25,7 +29,7 @@ public class Competitive  extends Member{
         this.discipline = discipline;
     }
 
-    public double getBestTime() {
+    /*public double getBestTime() {
         return bestTime;
     }
 
@@ -39,7 +43,7 @@ public class Competitive  extends Member{
 
     public void setDate(String date) {
         this.date = date;
-    }
+    }*/
 
     public int getDistance() {
         return distance;
@@ -54,9 +58,9 @@ public class Competitive  extends Member{
         return super.toString() +
 
                 "discipline= " + discipline +
-                ", distance(Meter)= " + distance + //"Meter" +
-                ", bestTime(MM/SS)= " + bestTime + //"MM/SS" +
-                ", date= " + date;
+                ", distance(Meter)= " + distance  //+"Meter" +
+                /*", bestTime(MM/SS)= " + bestTime + //"MM/SS" +
+                ", date= " + date*/;
 
     }
 }
