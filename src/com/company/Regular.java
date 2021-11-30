@@ -16,7 +16,7 @@ public class Regular extends Member {
     public String toString() {
         return super.toString()
                 + "Approximately swims per Week" + swimsPerWeek +
-                ", FavouriteDicipline " + favouriteDiscipline;
+                ", FavouriteDiscipline " + favouriteDiscipline;
     }
 
 }
