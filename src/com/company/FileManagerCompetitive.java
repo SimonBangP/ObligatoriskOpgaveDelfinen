@@ -7,7 +7,7 @@ public class FileManagerCompetitive {
 
     //jeg oprettede filen i File-manageren for Competitive
     //Den fil indholder oplysninger som er relevant for træneren når har vil udtage svømmere
-    //oplyninger bliver gemt i ArrayList'er som indeholder resultater og kun resultater
+    //oplyninger bliver gemt i en ArrayList som indeholder resultater og kun resultater
         File competitiveMembersFile = new File("CompetitiveMembersFile");
 
     //I metoden for jeg brug for en liste over konkurrence svømmere og en fil som parameter
@@ -53,5 +53,55 @@ public class FileManagerCompetitive {
 
     }
 
-    public void readFromFile(File competitiveMembersFile)throws FileNotFoundException{}
+    public void readFromFile(File competitiveMembersFile, ArrayList<Competitive> newCompMember)throws FileNotFoundException {
+
+        Scanner read = new Scanner(competitiveMembersFile);
+
+            double a = read.nextDouble();
+            double b = read.nextDouble();
+            double c = read.nextDouble();
+
+            System.out.println(a);
+            System.out.println(a);
+            System.out.println(a);
+
+
+    /*S    for (int i = 0; i < 50; i++) {
+            if(read.hasNextDouble()){
+                double tid = read.nextDouble();
+
+                String dato = read.next();
+                System.out.println(tid);
+                System.out.println(dato);}
+            tring line = read.nextLine();
+            System.out.println(line);*/
+
+        }
+/*
+        System.out.println(line);
+        while (read.hasNextLine()){
+
+            Scanner lineScanner = new Scanner(line);
+
+            //if(lineScanner.hasNextDouble()){
+
+            while(lineScanner.hasNextDouble()) {
+
+
+                double bestTime = lineScanner.nextDouble();
+                String date = lineScanner.next();
+            }
+
+                if(!read.hasNextDouble()){
+                    break;
+                }
+
+                for (int i = 0; i < newCompMember.size(); i++) {
+                    //newCompMember.get(i).bestTimes.add(result);
+                }*/
+
+        //}
+
+
+
 }

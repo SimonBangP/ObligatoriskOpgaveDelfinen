@@ -108,9 +108,9 @@ public class MemberManager {
             System.out.println("Please enter the distance that the swimmer is swimming in the chosed dicipline ");
             int distance = console.nextInt();
 
+            //@Har udkommenteret de to fields da, de nu bliver udskrevet i en liste over resultater
             /*System.out.println("please enter the currently best time the swimmer have been swimming so far (MM/SS) ex. 02.35");
             double bestTime = console.nextDouble();
-
             System.out.println("Please enter the date where the best time is from (DD/MM/YY");
             String date = console.next();*/
 

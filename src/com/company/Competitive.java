@@ -9,7 +9,7 @@ public class Competitive  extends Member{
     //protected double bestTime;
     //protected String date;
     protected int distance;
-    ArrayList<String> bestTimes;
+    protected ArrayList<String> bestTimes;
 
     public Competitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, String discipline, int distance/*, double bestTime, String date*/) {
         super(firsName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);

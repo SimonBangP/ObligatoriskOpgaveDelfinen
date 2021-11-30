@@ -29,21 +29,20 @@ public static void main(String[] args) throws FileNotFoundException {
         listManager.newCompMember.add(Mo);
 
 
+
+        Scanner console = new Scanner(System.in);
+
+        createMember.createMember(console, listManager.newMember, listManager.newCompMember, listManager.newRegMember);
+
+
         System.out.println(subscriptionManager.getSubscriptionSum(listManager.newMember,
             listManager.newCompMember,listManager.newRegMember));
 
-        Scanner console = new Scanner(System.in);
-/*
-        //createMember.createMember(console, listManager.newMember, listManager.newCompMember, listManager.newRegMember);
 
 
-
-*/
-
-
+    //Mo's test områdde
     FileManagerCompetitive competitiveFileManager = new FileManagerCompetitive();
-        //Mo's test områdde
-    //Create a test member
+ /*   //Create a test member
     //createMember.createMember(console, listManager.newMember, listManager.newCompMember, listManager.newRegMember);
     //update his/her results list
     TrainingResultManager resultManager = new TrainingResultManager();
@@ -54,8 +53,9 @@ public static void main(String[] args) throws FileNotFoundException {
 
     competitiveFileManager.writeToFile(competitiveFileManager.competitiveMembersFile, listManager.newCompMember);
 
+    competitiveFileManager.readFromFile(competitiveFileManager.competitiveMembersFile, listManager.newCompMember);
 
-
+*/
 }
 }
 

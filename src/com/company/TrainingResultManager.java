@@ -4,25 +4,33 @@ import java.util.*;
 
 public class TrainingResultManager {
 
-    //
 
-    //En arraylist over tider
+
+    /*//En arraylist over tider/ blev ikke brugt alligevel
     ArrayList<Double> bestTimes = new ArrayList<>();
-    ArrayList<String> dates = new ArrayList<>();
+    ArrayList<String> dates = new ArrayList<>();*/
 
 // tilføj at forloopet også indhenter gamle bedste tid. Mellem mellem "+'er"
+
     public void updateBestTime(Scanner console,ArrayList<Competitive> newCompMember){
 
+        //for-loop til at udskrive en liste over alle konkurrence medlemerne, så træneren kan vælge en af dem
         for(int i = 0; i < newCompMember.size(); i++){
             System.out.println((i+ 1)+": "+newCompMember.get(i).getFirstName()+" "+
                     newCompMember.get(i).getLastName()+" "+newCompMember.get(i).getDiscipline()+" "+
                     newCompMember.get(i).getDistance()/*+" "+newCompMember.get(i).getBestTime()+" "+
                     newCompMember.get(i).getDate()*/);
         }
+
         //Tilføj System.out.print og bed brugeren indtaste hvilken medlem der skal ændres.
         System.out.println("Choose the swimmer which result you'd like to update!");
+
+        //her vælger brugeren indekset som den svømmer han vil vælge har
         int indexOfCompetitive = console.nextInt();
+
+        //den udskriver svømmerens oplysninger som den henter fra ArrayList newCompMember som indeholder alle konkurrence svømmere
         System.out.println(newCompMember.get(indexOfCompetitive - 1));
+
 
         System.out.println("Enter new BestTime");
         double bestTime = console.nextDouble();
@@ -31,16 +39,22 @@ public class TrainingResultManager {
         System.out.println("Enter the date");
         String date = console.next();
 
+        //I starten havde vi kun muligheden for at tilføje/opdatere ét resultat pr. svømmer
+        //nu er de to statments ligegyldige da hver konkurrence svømmer har en hel liste over resultater
         //newCompMember.get(indexOfCompetitive - 1).setBestTime(bestTime);
         //newCompMember.get(indexOfCompetitive - 1).setDate(date);
 
         //System.out.println(newCompMember.get(indexOfCompetitive - 1));
 
+        //her tager jeg de nye indtastede oplysninger og pakker dem ind i et String object, for gøre håndteringen flydende
         String result = bestTime+"\t"+date;
 
+        //Her bliver tilføjet til listen BestTimes
+        //der bliver tilføjet det nye indtasted resultat
+        //og den bliver indtastet til den specifikker svømmer, så er i index, brugeren indtastede
         newCompMember.get(indexOfCompetitive - 1).bestTimes.add(result);
 
-//change
+        //metoden er færdig og har gjort det den skulle, at indtaste et nyt resultat/tid.
 
     }
 }
