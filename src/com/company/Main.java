@@ -10,9 +10,9 @@ public class Main {
 public static void main(String[] args) throws FileNotFoundException {
 
         MemberManager memberManager = new MemberManager();
-
         ListManager listManager = new ListManager();
         SubscriptionManager subscriptionManager = new SubscriptionManager();
+        TrainingResultManager trainingResultManager = new TrainingResultManager();
 
         Competitive Bob = new Competitive("Bob", "Johnson", 33, 34762378, "Bob@lol.com","active",1600,"crawl", 800/*, 07.10, "11/09-20"*/);
         Member Kim = new Member("Kim", "Larsen",62, 34873847,"Kim@lol.com", "active", 1200);
@@ -81,11 +81,11 @@ public static void main(String[] args) throws FileNotFoundException {
                        break;
 
                case 4:
-
+                  subscriptionManager.getSubscriptionSum(listManager.member, listManager.compMember, listManager.newRegMember);
                        break;
 
                case 5:
-
+                  trainingResultManager.updateBestTime(console, listManager.compMember);
                        break;
 
                case 6:
