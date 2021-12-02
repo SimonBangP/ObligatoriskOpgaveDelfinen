@@ -2,7 +2,6 @@ package com.company;
 
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +9,8 @@ public class Main {
 
 public static void main(String[] args) throws FileNotFoundException {
 
-        MemberManager createMember = new MemberManager();
+        MemberManager memberManager = new MemberManager();
+
         ListManager listManager = new ListManager();
         SubscriptionManager subscriptionManager = new SubscriptionManager();
 
@@ -21,29 +21,88 @@ public static void main(String[] args) throws FileNotFoundException {
         Competitive Simon = new Competitive("Simon","Bang",25,22334455,"simon@simon.dk","Active", 1600, "Butterfly", 600);
         Competitive Mo = new Competitive("Mo", "Stacks", 31, 33445566, "mo@mo.dk", "Active", 1600, "Chest", 800);
 
-        listManager.newMember.add(Kim);
-        listManager.newCompMember.add(Bob);
+        listManager.member.add(Kim);
+        listManager.compMember.add(Bob);
         listManager.newRegMember.add(Liz);
-        listManager.newMember.add(John);
-        listManager.newCompMember.add(Simon);
-        listManager.newCompMember.add(Mo);
+        listManager.member.add(John);
+        listManager.compMember.add(Simon);
+        listManager.compMember.add(Mo);
 
 
 
         Scanner console = new Scanner(System.in);
 
-        createMember.createMember(console, listManager.newMember, listManager.newCompMember, listManager.newRegMember);
+        //memberManager.memberManager(console, listManager.newMember, listManager.newCompMember, listManager.newRegMember);
 
 
-        System.out.println(subscriptionManager.getSubscriptionSum(listManager.newMember,
-            listManager.newCompMember,listManager.newRegMember));
+        /*System.out.println(subscriptionManager.getSubscriptionSum(listManager.newMember,
+            listManager.newCompMember,listManager.newRegMember));*/
+
+
+
+
+        System.out.println("|*******************************************************************************************************|");
+        System.out.println("|       ______________                    ______________                      ______________            |");
+        System.out.println("|      |   ENTER 1    |                  |   Enter 2    |                    |   ENTER 3    |           |");
+        System.out.println("|      |              |                  |              |                    |              |           |");
+        System.out.println("|      |   CREATE     |                  |    CHANGE    |                    |   DELETE     |           |");
+        System.out.println("|      |    NEW       |                  |    MEMBER    |                    |     A        |           |");
+        System.out.println("|      |   MEMBER     |                  |  INFORMATION |                    |   MEMBER     |           |");
+        System.out.println("|      |______________|                  |______________|                    |______________|           |");
+        System.out.println("|                                                                                                       |");
+        System.out.println("|       ______________                    ______________                      ______________            |");
+        System.out.println("|      |   Enter 4    |                  |   Enter 5    |                    |   Enter 6    |           |");
+        System.out.println("|      |              |                  |              |                    |              |           |");
+        System.out.println("|      |     SEE      |                  |   REGISTER   |                    |     SEE      |           |");
+        System.out.println("|      |   CURRENT    |                  |     NEW      |                    |     TOP      |           |");
+        System.out.println("|      | SUBSCRIPTION |                  |   TRAINING   |                    |     FIVE     |           |");
+        System.out.println("|      |    AMOUNT    |                  |    RESULT    |                    |   SWIMMERS   |           |");
+        System.out.println("|      |______________|                  |______________|                    |______________|           |");
+        System.out.println("|                                                                                                       |");
+        System.out.println("|*******************************************************************************************************|");
+
+
+        int answer = console.nextInt();
+
+        while (answer !=7){
+
+       switch (answer){
+
+               case 1:
+                  memberManager.createMember(console, listManager.member, listManager.compMember, listManager.newRegMember);
+                        break;
+
+               case 2:
+                  memberManager.changeMember(console, listManager.member);
+                        break;
+
+               case 3:
+                  memberManager.deleteMember(console, listManager.member, listManager.newRegMember, listManager.compMember);
+                       break;
+
+               case 4:
+
+                       break;
+
+               case 5:
+
+                       break;
+
+               case 6:
+
+                       break;
+
+               default:
+                       break;
+        }
+    }
 
 
 
     //Mo's test områdde
     FileManagerCompetitive competitiveFileManager = new FileManagerCompetitive();
  /*   //Create a test member
-    //createMember.createMember(console, listManager.newMember, listManager.newCompMember, listManager.newRegMember);
+    //memberManager.memberManager(console, listManager.newMember, listManager.newCompMember, listManager.newRegMember);
     //update his/her results list
     TrainingResultManager resultManager = new TrainingResultManager();
     resultManager.updateBestTime(console, listManager.newCompMember);

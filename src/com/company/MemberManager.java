@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class MemberManager {
 
+
     public void createMember (Scanner console, ArrayList<Member> newMember, ArrayList<Competitive> newCompMember, ArrayList<Regular> newRegMember) {
         int age = 0;
         System.out.println("In the following you will be able to add a member to the 'svømmeklubben Delfinen'\n" +
@@ -123,14 +124,14 @@ public class MemberManager {
 
         }
     }
-    public void changeMember (Scanner console, ArrayList<Member> newMember){
+    public void changeMember (Scanner console, ArrayList<Member> member){
         System.out.println("You have chosen that you want to change some information on a member.");
-        for (int i = 0; i < newMember.size(); i++){
-            System.out.println("member number" + (i + 1) + " " + newMember.get(i));
+        for (int i = 0; i < member.size(); i++){
+            System.out.println("member number" + (i + 1) + " " + member.get(i));
         }
         System.out.println("Which member to you want to make changes on? Enter the membernumber ");
         int changeAnswer = console.nextInt();
-        System.out.println(newMember.get(changeAnswer-1));
+        System.out.println(member.get(changeAnswer-1));
 
         System.out.println("Which information do you want change?+ " +
                 "If you want to change first name, please enter 1 \n" +
@@ -147,26 +148,26 @@ public class MemberManager {
             case 1:
                 System.out.println("Please enter the new first name ");
                 String firstName = console.next();
-                newMember.get(changeAnswer - 1).setFirstName(firstName);
+                member.get(changeAnswer - 1).setFirstName(firstName);
 
                 break;
 
             case 2:
                 System.out.println("Please enter the new last name");
                 String lastName = console.next();
-                newMember.get(changeAnswer - 1).setLastName(lastName);
+                member.get(changeAnswer - 1).setLastName(lastName);
                 break;
 
             case 3:
                 System.out.println("Please enter the new age");
                 int age = console.nextInt();
-                newMember.get(changeAnswer - 1).setAge(age);
+                member.get(changeAnswer - 1).setAge(age);
                 if (age < 18){
-                    newMember.get(changeAnswer - 1).setSubscriptionAmount(1000);
+                    member.get(changeAnswer - 1).setSubscriptionAmount(1000);
                 }else if (age > 18 && age <60){
-                    newMember.get(changeAnswer - 1).setSubscriptionAmount(1600);
+                    member.get(changeAnswer - 1).setSubscriptionAmount(1600);
                 }else if (age > 60){
-                    newMember.get(changeAnswer - 1).setSubscriptionAmount((1600/100)*75);
+                    member.get(changeAnswer - 1).setSubscriptionAmount((1600/100)*75);
 
                 }
 
@@ -175,13 +176,13 @@ public class MemberManager {
             case 4:
                 System.out.println("Please enter the new phone number");
                 int phoneNumber = console.nextInt();
-                newMember.get(changeAnswer - 1).setSubscriptionAmount(phoneNumber);
+                member.get(changeAnswer - 1).setSubscriptionAmount(phoneNumber);
                 break;
 
             case 5:
                 System.out.println("Please enter the new Email");
                 String email = console.next();
-                newMember.get(changeAnswer - 1 ).setEmail(email);
+                member.get(changeAnswer - 1 ).setEmail(email);
                 break;
 
             case 6:
@@ -192,7 +193,7 @@ public class MemberManager {
                     activityForm = console.next();
                 }
                 if (activityForm.equals("passive")){
-                    newMember.get(changeAnswer - 1).setSubscriptionAmount(500);
+                    member.get(changeAnswer - 1).setSubscriptionAmount(500);
 
                 }
 
@@ -226,12 +227,25 @@ public class MemberManager {
             for (int i = 0; i < member.size(); i++){
                 System.out.println("Member number " + (i + 1) + ": \n" +  member.get(i));
 
+                System.out.println("Please enter the number of the member you want to delete");
+                int deleteMember = console.nextInt();
+
+                member.remove((deleteMember - 1));
+
             }
 
         } else if (memberType.toLowerCase().equals("regular")){
+            System.out.println("Please enter the number of the Regular member you want to delete");
+            int deleteMember = console.nextInt();
+
+            regularMember.remove((deleteMember - 1));
+
 
         } else {
-            System.out.println();
+            System.out.println("Please enter the number of the competitive member you want to delete");
+            int deleteMember = console.nextInt();
+
+            compMember.remove((deleteMember - 1));
 
 
         }
