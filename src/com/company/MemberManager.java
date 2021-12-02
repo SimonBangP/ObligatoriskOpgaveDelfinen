@@ -81,7 +81,8 @@ public class MemberManager {
             if (memberType == 1){
                 swimmerAnswer = "regular";
             }
-            if (memberType == 2){
+            //indsat else foran if nedunder her
+            else if (memberType == 2){
                 swimmerAnswer = "competitive";
             }
 
@@ -107,13 +108,14 @@ public class MemberManager {
             System.out.println("Please enter the distance that the swimmer is swimming in the chosed dicipline ");
             int distance = console.nextInt();
 
-            System.out.println("please enter the currently best time the swimmer have been swimming so far (MM/SS) ex. 02.35");
+            //@Har udkommenteret de to fields da, de nu bliver udskrevet i en liste over resultater
+            /*System.out.println("please enter the currently best time the swimmer have been swimming so far (MM/SS) ex. 02.35");
             double bestTime = console.nextDouble();
-
             System.out.println("Please enter the date where the best time is from (DD/MM/YY");
-            String date = console.next();
+            String date = console.next();*/
 
-            Competitive createCompMember = new Competitive(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, dicipline, distance, bestTime, date);
+            Competitive createCompMember = new Competitive(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, dicipline, distance/*, bestTime, date*/);
+            newCompMember.add(createCompMember);
 
         } else {
             System.out.println("The entered are not correct, please try again");
