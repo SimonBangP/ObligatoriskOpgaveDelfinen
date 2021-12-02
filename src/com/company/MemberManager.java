@@ -124,16 +124,40 @@ public class MemberManager {
 
         }
     }
-    public void changeMember (Scanner console, ArrayList<Member> member){
+    public void changeMember (Scanner console, ArrayList<Member> member, ArrayList<Regular> regMember, ArrayList<Competitive> compMember){
         System.out.println("You have chosen that you want to change some information on a member.");
+        /*System.out.println("Please enter which type of member you want to change" +
+                "Enter member, regular og competitive");
+        String memberType = console.next();
+
+
+        if (memberType.equals("member")){
+
+            for (int i = 0; i < member.size(); i++){
+             System.out.println("member number" + (i + 1) + " " + member.get(i));
+          }
+        } else if (memberType.equals("regular")){
+            for (int i = 0; i < regMember.size(); i++){
+                System.out.println("member number" + (i + 1) + " " + regMember.get(i));
+            }
+        } else if (memberType.equals("competitive")){
+            for (int i = 0; i < compMember.size(); i++){
+                System.out.println("member number" + (i + 1) + " " + compMember.get(i));
+            }
+
+        }*/
+
         for (int i = 0; i < member.size(); i++){
             System.out.println("member number" + (i + 1) + " " + member.get(i));
         }
+
+
+
         System.out.println("Which member to you want to make changes on? Enter the membernumber ");
         int changeAnswer = console.nextInt();
         System.out.println(member.get(changeAnswer-1));
 
-        System.out.println("Which information do you want change?+ " +
+        System.out.println("Which information do you want change? " +
                 "If you want to change first name, please enter 1 \n" +
                 "If you want to change last name, please enter 2 \n +" +
                 "If you want to change age, please enter 3 \n + " +

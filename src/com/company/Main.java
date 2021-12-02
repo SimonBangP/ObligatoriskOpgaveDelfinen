@@ -13,6 +13,7 @@ public static void main(String[] args) throws FileNotFoundException {
         ListManager listManager = new ListManager();
         SubscriptionManager subscriptionManager = new SubscriptionManager();
         TrainingResultManager trainingResultManager = new TrainingResultManager();
+        FileManager fileManager = new FileManager();
 
         Competitive Bob = new Competitive("Bob", "Johnson", 33, 34762378, "Bob@lol.com","active",1600,"crawl", 800/*, 07.10, "11/09-20"*/);
         Member Kim = new Member("Kim", "Larsen",62, 34873847,"Kim@lol.com", "active", 1200);
@@ -23,7 +24,7 @@ public static void main(String[] args) throws FileNotFoundException {
 
         listManager.member.add(Kim);
         listManager.compMember.add(Bob);
-        listManager.newRegMember.add(Liz);
+        listManager.regMember.add(Liz);
         listManager.member.add(John);
         listManager.compMember.add(Simon);
         listManager.compMember.add(Mo);
@@ -45,9 +46,9 @@ public static void main(String[] args) throws FileNotFoundException {
         System.out.println("|       ______________                    ______________                      ______________            |");
         System.out.println("|      |   ENTER 1    |                  |   Enter 2    |                    |   ENTER 3    |           |");
         System.out.println("|      |              |                  |              |                    |              |           |");
-        System.out.println("|      |   CREATE     |                  |    CHANGE    |                    |   DELETE     |           |");
-        System.out.println("|      |    NEW       |                  |    MEMBER    |                    |     A        |           |");
-        System.out.println("|      |   MEMBER     |                  |  INFORMATION |                    |   MEMBER     |           |");
+        System.out.println("|      |   CREATE     |                  |    CHANGE    |                    |    DELETE    |           |");
+        System.out.println("|      |    NEW       |                  |    MEMBER    |                    |      A       |           |");
+        System.out.println("|      |   MEMBER     |                  |  INFORMATION |                    |    MEMBER    |           |");
         System.out.println("|      |______________|                  |______________|                    |______________|           |");
         System.out.println("|                                                                                                       |");
         System.out.println("|       ______________                    ______________                      ______________            |");
@@ -59,6 +60,11 @@ public static void main(String[] args) throws FileNotFoundException {
         System.out.println("|      |    AMOUNT    |                  |    RESULT    |                    |   SWIMMERS   |           |");
         System.out.println("|      |______________|                  |______________|                    |______________|           |");
         System.out.println("|                                                                                                       |");
+        System.out.println("|               _______________________________________________________________                         |");
+        System.out.println("|              |                            ENTER 7                            |                        |");
+        System.out.println("|              |                                                               |                        |");
+        System.out.println("|              |                       CLOSE THE PROGRAM                       |                        |");
+        System.out.println("|              |                                                               |                        |");
         System.out.println("|*******************************************************************************************************|");
 
 
@@ -69,19 +75,19 @@ public static void main(String[] args) throws FileNotFoundException {
        switch (answer){
 
                case 1:
-                  memberManager.createMember(console, listManager.member, listManager.compMember, listManager.newRegMember);
+                  memberManager.createMember(console, listManager.member, listManager.compMember, listManager.regMember);
                         break;
 
                case 2:
-                  memberManager.changeMember(console, listManager.member);
+                  memberManager.changeMember(console, listManager.member, listManager.regMember, listManager.compMember);
                         break;
 
                case 3:
-                  memberManager.deleteMember(console, listManager.member, listManager.newRegMember, listManager.compMember);
+                  memberManager.deleteMember(console, listManager.member, listManager.regMember, listManager.compMember);
                        break;
 
                case 4:
-                  subscriptionManager.getSubscriptionSum(listManager.member, listManager.compMember, listManager.newRegMember);
+                  subscriptionManager.getSubscriptionSum(listManager.member, listManager.compMember, listManager.regMember);
                        break;
 
                case 5:
@@ -89,6 +95,11 @@ public static void main(String[] args) throws FileNotFoundException {
                        break;
 
                case 6:
+
+                       break;
+
+
+                case 7:
 
                        break;
 
