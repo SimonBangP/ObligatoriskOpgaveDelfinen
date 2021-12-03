@@ -9,7 +9,8 @@ public class Competitive  extends Member{
     protected double bestTime;
     protected String date;
     protected int distance;
-    protected ArrayList<String> bestTimes;
+    protected ArrayList<Result> bestTimes;//Den er lavet om fra <String> til <Result>
+    //Dvs. vi har et object der hedder Result
 
     public Competitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, String discipline, int distance/*, double bestTime, String date*/) {
         super(firsName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
@@ -17,7 +18,7 @@ public class Competitive  extends Member{
         this.bestTime = bestTime;
         this.date = date;
         this.distance = distance;
-        bestTimes = new ArrayList<>();
+        bestTimes = new ArrayList<Result>();
     }
 
 

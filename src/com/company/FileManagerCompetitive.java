@@ -2,6 +2,7 @@ package com.company;
 
 import java.io.*;
 import java.util.*;
+import java.text.*;
 
 public class FileManagerCompetitive {
 
@@ -9,6 +10,9 @@ public class FileManagerCompetitive {
     //Den fil indholder oplysninger som er relevant for træneren når har vil udtage svømmere
     //oplyninger bliver gemt i en ArrayList som indeholder resultater og kun resultater
         File competitiveMembersFile = new File("CompetitiveMembersFile");
+
+    //jeg oprettede efterfølgende en anden fil, der kun indeholder Result-Objekter
+        //File resultsStorageFile = new File("ResultStorageFile.txt");
 
     //I metoden for jeg brug for en liste over konkurrence svømmere og en fil som parameter
     public void writeToFile(File competitiveMembersFile, ArrayList<Competitive> newCompMember)throws FileNotFoundException {
@@ -53,55 +57,127 @@ public class FileManagerCompetitive {
 
     }
 
+    //jeg er blevet vejledet til at have en seperat fil som er en test fil
+    //I den fil skal der ikke stå informationer, men kun tokens sepereret af ":".
+    //De tokens gemmes til ArrayListerne til de forskellige konkurrence svømmere
+    public void writeToFileProgrammer(File resultsStorageFile, ArrayList<Competitive> newCompMember)throws FileNotFoundException{
+
+        PrintStream printStream = new PrintStream(resultsStorageFile);
+
+        for (int i = 0; i < newCompMember.size(); i++) {
+            for(int j = 0; j < newCompMember.get(i).bestTimes.size(); j++){
+                printStream.print(newCompMember.get(i).bestTimes.get(j)+":");
+            }
+            System.out.println();
+        }
+    }
+
     public void readFromFile(File competitiveMembersFile, ArrayList<Competitive> newCompMember)throws FileNotFoundException {
 
         Scanner read = new Scanner(competitiveMembersFile);
-
-            double a = read.nextDouble();
-            double b = read.nextDouble();
-            double c = read.nextDouble();
-
-            System.out.println(a);
-            System.out.println(a);
-            System.out.println(a);
-
-
-    /*S    for (int i = 0; i < 50; i++) {
-            if(read.hasNextDouble()){
-                double tid = read.nextDouble();
-
-                String dato = read.next();
-                System.out.println(tid);
-                System.out.println(dato);}
-            tring line = read.nextLine();
-            System.out.println(line);*/
-
-        }
-/*
-        System.out.println(line);
+        //int j = 0;
+        int i = 0;
         while (read.hasNextLine()){
+            //String line = read.nextLine();
+            Scanner lineScan = new Scanner(read.nextLine());
 
-            Scanner lineScanner = new Scanner(line);
+            while (lineScan.hasNext()){
+                //for (int i = 0; i < newCompMember.size(); i++) {
 
-            //if(lineScanner.hasNextDouble()){
+                    double resTime = read.nextDouble();
+                    String resDate = read.next();
 
-            while(lineScanner.hasNextDouble()) {
+                    Result result = new Result(resTime, resDate);
+                    newCompMember.get(i).bestTimes.add(result);
 
 
-                double bestTime = lineScanner.nextDouble();
-                String date = lineScanner.next();
             }
+            i ++;
+           //if(!read.hasNextLine()){break;}
+        }
 
-                if(!read.hasNextDouble()){
+
+            //String line = read.nextLine();
+            //Scanner lineScan = new Scanner(line);
+
+
+
+            //String splittingHelp[] = line.split(":");
+/*
+            for (int i = 0; i < newCompMember.get(j).bestTimes.size(); i++){
+                String result = splittingHelp[i];
+
+                System.out.println(result);
+                //if(!read.hasNextLine()){
                     break;
                 }
-
-                for (int i = 0; i < newCompMember.size(); i++) {
-                    //newCompMember.get(i).bestTimes.add(result);
-                }*/
-
-        //}
+            }j ++;*/
 
 
 
-}
+
+
+
+
+
+
+
+
+
+        }
+
+
+/*
+        do
+        while (read.hasNextLine()) {
+
+
+
+            String line = read.nextLine();
+
+
+            if(line.contentEquals("********************")){
+                //change member
+                i = i++;
+                break;
+            }
+
+            String splittingHelp[] = line.split(":", 2);
+
+            String lineTime = splittingHelp[0];
+            String lineDate = splittingHelp[1];
+
+            double resTime = Double.parseDouble(lineTime);
+
+            //System.out.println(resTime);
+            //System.out.println(lineDate);
+
+            Result r = new Result(resTime, lineDate);
+
+            newCompMember.get(i).bestTimes.add(r);
+
+            for(int j= 0; j < newCompMember.get(i).bestTimes.size(); j++){
+
+
+                System.out.println(newCompMember.get(i).bestTimes.get(j));
+            }
+
+
+
+
+
+
+            //System.out.println(line);
+            //Scanner lineScan = new Scanner(line);
+
+
+            //String result = lineScan.nextLine();
+
+
+            //System.out.println(result);
+
+        }*/
+
+
+    }
+

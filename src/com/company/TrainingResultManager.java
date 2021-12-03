@@ -14,6 +14,9 @@ public class TrainingResultManager {
 
     public void updateBestTime(Scanner console,ArrayList<Competitive> newCompMember){
 
+        //Tilføj System.out.print og bed brugeren indtaste hvilken medlem der skal ændres.
+        System.out.println("Choose the swimmer which result you'd like to update!");
+
         //for-loop til at udskrive en liste over alle konkurrence medlemerne, så træneren kan vælge en af dem
         for(int i = 0; i < newCompMember.size(); i++){
             System.out.println((i+ 1)+": "+newCompMember.get(i).getFirstName()+" "+
@@ -22,8 +25,7 @@ public class TrainingResultManager {
                     newCompMember.get(i).getDate()*/);
         }
 
-        //Tilføj System.out.print og bed brugeren indtaste hvilken medlem der skal ændres.
-        System.out.println("Choose the swimmer which result you'd like to update!");
+
 
         //her vælger brugeren indekset som den svømmer han vil vælge har
         int indexOfCompetitive = console.nextInt();
@@ -47,7 +49,8 @@ public class TrainingResultManager {
         //System.out.println(newCompMember.get(indexOfCompetitive - 1));
 
         //her tager jeg de nye indtastede oplysninger og pakker dem ind i et String object, for gøre håndteringen flydende
-        String result = bestTime+"\t"+date;
+        //String result = bestTime+"\t"+date;
+        Result result = new Result(bestTime, date);
 
         //Her bliver tilføjet til listen BestTimes
         //der bliver tilføjet det nye indtasted resultat
