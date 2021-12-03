@@ -28,6 +28,10 @@ public class FileManagerCompMember {
                 String date = competitive.get(i).date;
                 int distance = competitive.get(i).distance;
                 //ArrayList<String> besttimes = competitive.get(i).bestTimes;
+
+                writeToCompetitive.println(firstName + " " + lastName + " " + age + " " + phoneNumber + " " +
+                        email + " " + activityform + " " + subscriptionamount + " " + discipline + " " + besttime +
+                        " " + date + " " + distance);
             }
 
         }
