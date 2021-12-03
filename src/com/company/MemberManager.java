@@ -153,7 +153,7 @@ public class MemberManager {
             System.out.println(" *************************");
             String date = console.next();
 
-            Competitive createCompMember = new Competitive(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, dicipline, distance/*, bestTime, date*/);
+            Competitive createCompMember = new Competitive(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, dicipline, distance, bestTime, date);
             newCompMember.add(createCompMember);
 
         } else {

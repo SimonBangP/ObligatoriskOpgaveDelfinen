@@ -43,19 +43,19 @@ public class TrainingResultManager {
 
         //I starten havde vi kun muligheden for at tilføje/opdatere ét resultat pr. svømmer
         //nu er de to statments ligegyldige da hver konkurrence svømmer har en hel liste over resultater
-        //newCompMember.get(indexOfCompetitive - 1).setBestTime(bestTime);
-        //newCompMember.get(indexOfCompetitive - 1).setDate(date);
+        newCompMember.get(indexOfCompetitive - 1).setBestTime(bestTime);
+        newCompMember.get(indexOfCompetitive - 1).setDate(date);
 
         //System.out.println(newCompMember.get(indexOfCompetitive - 1));
 
         //her tager jeg de nye indtastede oplysninger og pakker dem ind i et String object, for gøre håndteringen flydende
         //String result = bestTime+"\t"+date;
-        Result result = new Result(bestTime, date);
+    //NY    //Result result = new Result(bestTime, date); NY
 
         //Her bliver tilføjet til listen BestTimes
         //der bliver tilføjet det nye indtasted resultat
         //og den bliver indtastet til den specifikker svømmer, så er i index, brugeren indtastede
-        newCompMember.get(indexOfCompetitive - 1).bestTimes.add(result);
+    //NY    //newCompMember.get(indexOfCompetitive - 1).bestTimes.add(result); NY
 
         //metoden er færdig og har gjort det den skulle, at indtaste et nyt resultat/tid.
 

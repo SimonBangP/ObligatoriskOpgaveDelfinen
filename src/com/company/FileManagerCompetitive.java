@@ -89,8 +89,6 @@ public class FileManagerCompetitive {
 
                     Result result = new Result(resTime, resDate);
                     newCompMember.get(i).bestTimes.add(result);
-
-
             }
             i ++;
            //if(!read.hasNextLine()){break;}

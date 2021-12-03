@@ -4,9 +4,7 @@ public class Result {
     protected double time;
     protected String regDate;
 
-    public Result() {
 
-    }
 
     public Result(double time, String regDate) {
         this.time = time;
