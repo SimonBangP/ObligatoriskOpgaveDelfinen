@@ -58,17 +58,17 @@ public class MemberManager {
         System.out.println(" *********************");
         String activityForm = console.next();
 
-        while (!(activityForm.equals("active")) && !(activityForm.equals("passive"))){
+        while (!(activityForm.equalsIgnoreCase("active")) && !(activityForm.equalsIgnoreCase("passive"))){
             System.out.println("The entered activity form is not valid. Pleaser enter the word active or passive");
             activityForm = console.next();
 
         }
 
-        if (activityForm.equals("passive")){
+        if (activityForm.equalsIgnoreCase("passive")){
             subscriptionAmount = 500;
 
         }
-        if (activityForm.equals("active")) {
+        if (activityForm.equalsIgnoreCase("active")) {
 
             if (age > 0 && age <18) {
                 subscriptionAmount = 1000;
@@ -93,7 +93,7 @@ public class MemberManager {
         System.out.println(" ************************");
         String swimmerAnswer = console.next();
 
-        while (!(swimmerAnswer.equals("regular"))&& !(swimmerAnswer.equals("competitive"))){
+        while (!(swimmerAnswer.equalsIgnoreCase("regular"))&& !(swimmerAnswer.equalsIgnoreCase("competitive"))){
             System.out.println("The entered is not a membertype\n" + "Enter 1 if the member is a regular swimmer\n"
                     + " Enter 2 if the member is a competitive swimmer");
             int memberType = console.nextInt();
@@ -127,6 +127,7 @@ public class MemberManager {
         newRegMember.add(createRegMember);
 
 
+
         } else if (swimmerAnswer.equals("competitive")){
             System.out.println(" ********************* ");
             System.out.println("|    ENTER CURRENT    |");
@@ -156,11 +157,11 @@ public class MemberManager {
             Competitive createCompMember = new Competitive(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, dicipline, distance, bestTime, date);
             newCompMember.add(createCompMember);
 
-        } else {
-            System.out.println("The entered are not correct, please try again");
-            swimmerAnswer = console.next();
+        } //else {
+            //System.out.println("The entered are not correct, please try again");
+            //swimmerAnswer = console.next();
 
-        }
+        //}
     }
     public void changeMember (Scanner console, ArrayList<Member> member, ArrayList<Regular> regMember, ArrayList<Competitive> compMember){
         System.out.println("You have chosen that you want to change some information on a member.");
