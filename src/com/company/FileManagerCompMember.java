@@ -56,7 +56,7 @@ public class FileManagerCompMember {
 
 
 
-            Competitive newCompetitve = new Competitive(firstName,lastName,age,phoneNumber,email,activityform,subscriptionamount,discipline,besttime,date,distance);
+            Competitive newCompetitve = new Competitive(firstName,lastName,age,phoneNumber,email,activityform,subscriptionamount,discipline,distance,besttime,date);
 
             competitive.add(newCompetitve);
 
