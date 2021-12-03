@@ -83,8 +83,8 @@ public class MemberManager {
 
     }
 
-        Member createNewMember = new Member(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
-        newMember.add(createNewMember);
+        /*Member createNewMember = new Member(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
+        newMember.add(createNewMember);*/
 
         System.out.println("Perfect, now you have filled out most of it. Now you should choose if the member is a regular swimmer or a competitive");
         System.out.println(" ************************");
