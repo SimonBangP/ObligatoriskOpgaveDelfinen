@@ -10,7 +10,7 @@ public class FileManagerCompMember {
 
     File competitiveFile = new File("Competitive.txt");
 
-        public void writeCompetitiveToFile (ArrayList<Competitive> competitive, File competitiveFile) throws FileNotFoundException{
+        public static void writeCompetitiveToFile (ArrayList<Competitive> competitive, File competitiveFile) throws FileNotFoundException{
 
             PrintStream writeToCompetitive = new PrintStream(competitiveFile);
 
@@ -32,7 +32,7 @@ public class FileManagerCompMember {
 
         }
 
-    public void readCompetitiveFile (ArrayList<Competitive> competitive, File competitiveFile) throws FileNotFoundException {
+    public static void readCompetitiveFile (ArrayList<Competitive> competitive, File competitiveFile) throws FileNotFoundException {
         Scanner read = new Scanner(new File("Competitive.txt"));
 
         while (read.hasNextLine()) {

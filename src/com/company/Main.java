@@ -17,10 +17,12 @@ public static void main(String[] args) throws FileNotFoundException {
         FileManager fileManager = new FileManager();
 
 
-            File memberFile = new File("Member.txt");
+            //File memberFile = new File("Member.txt");
             File regMemberFile = new File("RegMember.txt");
-            FileManagerMemberAL.readMemberFile(listManager.member, memberFile);
+            File competitiveFile = new File("Competitive.txt");
+            //FileManagerMemberAL.readMemberFile(listManager.member, memberFile);
             FileManagerRegMember.readMemberFile(listManager.regMember, regMemberFile);
+            FileManagerCompMember.writeCompetitiveToFile(listManager.compMember, competitiveFile);
 
 
 
@@ -110,6 +112,7 @@ public static void main(String[] args) throws FileNotFoundException {
 
                 case 7:
                 FileManagerRegMember.writeRegMemberToFile(listManager.regMember, regMemberFile);
+                FileManagerCompMember.writeCompetitiveToFile(listManager.compMember, competitiveFile);
                        break;
 
                default:
