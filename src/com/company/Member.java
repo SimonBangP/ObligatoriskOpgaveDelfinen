@@ -69,6 +69,13 @@ this.subscriptionAmount = subscriptionAmount;
     public void setEmail(String email) {
         this.email = email;
     }
+    public String getActivityForm(){
+    return activityForm;
+    }
+
+    public void setActivityForm(String activityForm) {
+        this.activityForm = activityForm;
+    }
 
     public int getSubscriptionAmount() {
         return subscriptionAmount;

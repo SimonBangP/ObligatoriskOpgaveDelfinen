@@ -116,7 +116,10 @@ public class MemberManager {
             System.out.println(" ******************************");
             int swimPerWeek = console.nextInt();
 
-            System.out.println("Please enter which of the four disciplines that is the members favourite");
+            System.out.println(" ******************");
+            System.out.println("| ENTER FAVOURITE |");
+            System.out.println("|    DISCIPLINE   |");
+            System.out.println(" ******************");
             String favouriteDiscipline = console.next();
 
 
@@ -125,17 +128,30 @@ public class MemberManager {
 
 
         } else if (swimmerAnswer.equals("competitive")){
-            System.out.println("Please enter the dicipline that the current swimmer is swimming. Either butterfly, back crawl, breast or crawl");
+            System.out.println(" ********************* ");
+            System.out.println("|    ENTER CURRENT    |");
+            System.out.println("| SWIMMING DISCIPLINE |");
+            System.out.println(" ********************* ");
             String dicipline = console.next();
 
-            System.out.println("Please enter the distance that the swimmer is swimming in the chosed dicipline ");
+            System.out.println(" ******************");
+            System.out.println("|  ENTER SWIMMING  |");
+            System.out.println("|    DISTANCE      |");
+            System.out.println(" ******************");
             int distance = console.nextInt();
 
             //@Har udkommenteret de to fields da, de nu bliver udskrevet i en liste over resultater
-            /*System.out.println("please enter the currently best time the swimmer have been swimming so far (MM/SS) ex. 02.35");
+            System.out.println(" *******************");
+            System.out.println("|  ENTER BEST TIME  |");
+            System.out.println("|     EX: 02.35     |");
+            System.out.println(" *******************");
             double bestTime = console.nextDouble();
-            System.out.println("Please enter the date where the best time is from (DD/MM/YY");
-            String date = console.next();*/
+
+
+            System.out.println(" *************************");
+            System.out.println("| ENTER DATE OF BEST TIME |");
+            System.out.println(" *************************");
+            String date = console.next();
 
             Competitive createCompMember = new Competitive(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, dicipline, distance/*, bestTime, date*/);
             newCompMember.add(createCompMember);
@@ -148,34 +164,203 @@ public class MemberManager {
     }
     public void changeMember (Scanner console, ArrayList<Member> member, ArrayList<Regular> regMember, ArrayList<Competitive> compMember){
         System.out.println("You have chosen that you want to change some information on a member.");
-        /*System.out.println("Please enter which type of member you want to change" +
-                "Enter member, regular og competitive");
+
+        System.out.println("Please enter which type of member you want to change" +
+                "Enter regular or competitive");
         String memberType = console.next();
 
 
-        if (memberType.equals("member")){
-
-            for (int i = 0; i < member.size(); i++){
-             System.out.println("member number" + (i + 1) + " " + member.get(i));
-          }
-        } else if (memberType.equals("regular")){
+         if (memberType.equals("regular")){
             for (int i = 0; i < regMember.size(); i++){
                 System.out.println("member number" + (i + 1) + " " + regMember.get(i));
+
+                System.out.println("Which member to you want to make changes on? Enter the member number ");
+                int changeAnswer = console.nextInt();
+                System.out.println(regMember.get(changeAnswer-1));
+
+                System.out.println("Which information do you want change? " +
+                        "If you want to change first name, please enter 1 \n" +
+                        "If you want to change last name, please enter 2 \n +" +
+                        "If you want to change age, please enter 3 \n + " +
+                        "If you want to change phone number, please enter 4 \n + " +
+                        "If you want to change email, please enter 5 \n + " +
+                        "If you want to change activity form, please enter 6 " +
+                        "IF you want to change favourite discipline, please enter 7" +
+                        "If you want to change approximately swims per week, please enter 8 ");
+
+                int changeInformation = console.nextInt();
+
+                switch (changeInformation){
+
+                    case 1:
+                        System.out.println("Please enter the new first name ");
+                        String firstName = console.next();
+                        regMember.get(changeAnswer - 1).setFirstName(firstName);
+
+                        break;
+
+                    case 2:
+                        System.out.println("Please enter the new last name");
+                        String lastName = console.next();
+                        regMember.get(changeAnswer - 1).setLastName(lastName);
+                        break;
+
+                    case 3:
+                        System.out.println("Please enter the new age");
+                        int age = console.nextInt();
+                        regMember.get(changeAnswer - 1).setAge(age);
+                        if (age < 18){
+                            regMember.get(changeAnswer - 1).setSubscriptionAmount(1000);
+                        }else if (age > 18 && age <60){
+                            regMember.get(changeAnswer - 1).setSubscriptionAmount(1600);
+                        }else if (age > 60){
+                            regMember.get(changeAnswer - 1).setSubscriptionAmount((1600/100)*75);
+
+                        }
+
+                        break;
+
+                    case 4:
+                        System.out.println("Please enter the new phone number");
+                        int phoneNumber = console.nextInt();
+                        regMember.get(changeAnswer - 1).setSubscriptionAmount(phoneNumber);
+                        break;
+
+                    case 5:
+                        System.out.println("Please enter the new Email");
+                        String email = console.next();
+                        regMember.get(changeAnswer - 1 ).setEmail(email);
+                        break;
+
+                    case 6:
+                        System.out.println("Please enter the new activity form");
+                        String activityForm = console.next();
+                        while (!(activityForm.equals("active")&& !(activityForm.equals("passive")))){
+                            System.out.println("The entered activity form is not valid, please enter again");
+                            activityForm = console.next();
+                        }
+                        if (activityForm.equals("passive")){
+                            regMember.get(changeAnswer - 1).setSubscriptionAmount(500);
+
+                        }  else {
+                           regMember.get(changeAnswer - 1).setActivityForm("Passive");
+                        }
+
+
+                        break;
+
+                    case 7:
+                        System.out.println("Please enter the new favourite discipline");
+                        String favouriteDiscipline = console.next();
+                        regMember.get(changeAnswer - 1).setFavouriteDiscipline(favouriteDiscipline);
+
+                        break;
+
+                    case 8:
+                        System.out.println("Please enter the new approximately swims per week");
+                        int swimsPerWeek = console.nextInt();
+                        regMember.get(changeAnswer - 1).setSwimsPerWeek(swimsPerWeek);
+
+                        break;
+
+                    default:
+
+                        break;
+
+
+                }
+
             }
+
+
+
         } else if (memberType.equals("competitive")){
             for (int i = 0; i < compMember.size(); i++){
                 System.out.println("member number" + (i + 1) + " " + compMember.get(i));
+
+                System.out.println("Which member to you want to make changes on? Enter the member number ");
+                int changeAnswer = console.nextInt();
+                System.out.println(compMember.get(changeAnswer-1));
+
+                System.out.println("Which information do you want change? " +
+                        "If you want to change first name, please enter 1 \n" +
+                        "If you want to change last name, please enter 2 \n +" +
+                        "If you want to change age, please enter 3 \n + " +
+                        "If you want to change phone number, please enter 4 \n + " +
+                        "If you want to change email, please enter 5 \n + " +
+                        "If you want to change activity form, please enter 6  ");
+
+                int changeInformation = console.nextInt();
+
+                switch (changeInformation){
+
+                    case 1:
+                        System.out.println("Please enter the new first name ");
+                        String firstName = console.next();
+                        compMember.get(changeAnswer - 1).setFirstName(firstName);
+
+                        break;
+
+                    case 2:
+                        System.out.println("Please enter the new last name");
+                        String lastName = console.next();
+                        compMember.get(changeAnswer - 1).setLastName(lastName);
+                        break;
+
+                    case 3:
+                        System.out.println("Please enter the new age");
+                        int age = console.nextInt();
+                        compMember.get(changeAnswer - 1).setAge(age);
+                        if (age < 18){
+                            compMember.get(changeAnswer - 1).setSubscriptionAmount(1000);
+                        }else if (age > 18 && age <60){
+                            compMember.get(changeAnswer - 1).setSubscriptionAmount(1600);
+                        }else if (age > 60){
+                            compMember.get(changeAnswer - 1).setSubscriptionAmount((1600/100)*75);
+
+                        }
+
+                        break;
+
+                    case 4:
+                        System.out.println("Please enter the new phone number");
+                        int phoneNumber = console.nextInt();
+                        compMember.get(changeAnswer - 1).setSubscriptionAmount(phoneNumber);
+                        break;
+
+                    case 5:
+                        System.out.println("Please enter the new Email");
+                        String email = console.next();
+                        compMember.get(changeAnswer - 1 ).setEmail(email);
+                        break;
+
+                    case 6:
+                        /*System.out.println("Please enter the new activity form");
+                        String activityForm = console.next();
+                        while (!(activityForm.equals("active")&& !(activityForm.equals("passive")))){
+                            System.out.println("The entered activity form is not valid, please enter again");
+                            activityForm = console.next();
+                        }
+                        if (activityForm.equals("passive")){
+                            compMember.get(changeAnswer - 1).setSubscriptionAmount(500);
+
+                        }*/
+
+
+                        break;
+
+                    default:
+
+                        break;
+
+
+                }
             }
 
-        }*/
-
-        for (int i = 0; i < member.size(); i++){
-            System.out.println("member number" + (i + 1) + " " + member.get(i));
         }
 
 
-
-        System.out.println("Which member to you want to make changes on? Enter the membernumber ");
+        /*System.out.println("Which member to you want to make changes on? Enter the member number ");
         int changeAnswer = console.nextInt();
         System.out.println(member.get(changeAnswer-1));
 
@@ -251,7 +436,7 @@ public class MemberManager {
                 break;
 
 
-        }
+        }*/
 
     }
 

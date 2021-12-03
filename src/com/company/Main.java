@@ -1,6 +1,7 @@
 package com.company;
 
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -14,6 +15,14 @@ public static void main(String[] args) throws FileNotFoundException {
         SubscriptionManager subscriptionManager = new SubscriptionManager();
         TrainingResultManager trainingResultManager = new TrainingResultManager();
         FileManager fileManager = new FileManager();
+
+
+            File memberFile = new File("Member.txt");
+            File regMemberFile = new File("RegMember.txt");
+            FileManagerMemberAL.readMemberFile(listManager.member, memberFile);
+            FileManagerRegMember.readMemberFile(listManager.regMember, regMemberFile);
+
+
 
         Competitive Bob = new Competitive("Bob", "Johnson", 33, 34762378, "Bob@lol.com","active",1600,"crawl", 800/*, 07.10, "11/09-20"*/);
         Member Kim = new Member("Kim", "Larsen",62, 34873847,"Kim@lol.com", "active", 1200);
@@ -67,7 +76,7 @@ public static void main(String[] args) throws FileNotFoundException {
         System.out.println("|              |                                                               |                        |");
         System.out.println("|*******************************************************************************************************|");
 
-/*
+
         int answer = console.nextInt();
 
         while (answer !=7){
@@ -100,7 +109,7 @@ public static void main(String[] args) throws FileNotFoundException {
 
 
                 case 7:
-
+                FileManagerRegMember.writeRegMemberToFile(listManager.regMember, regMemberFile);
                        break;
 
                default:
@@ -110,7 +119,7 @@ public static void main(String[] args) throws FileNotFoundException {
 
 
 
-    //Mo's test områdde
+   /* //Mo's test områdde
   //Create a test member
     //memberManager.memberManager(console, listManager.newMember, listManager.newCompMember, listManager.newRegMember);
     //update his/her results list
@@ -124,7 +133,7 @@ public static void main(String[] args) throws FileNotFoundException {
 
     //competitiveFileManager.readFromFile(competitiveFileManager.competitiveMembersFile, listManager.newCompMember);
 */
-    FileManagerCompetitive competitiveFileManager = new FileManagerCompetitive();
+   /* FileManagerCompetitive competitiveFileManager = new FileManagerCompetitive();
     //trainingResultManager.updateBestTime(console, listManager.compMember);
         //trainingResultManager.updateBestTime(console, listManager.compMember);
         //trainingResultManager.updateBestTime(console, listManager.compMember);
@@ -133,7 +142,7 @@ public static void main(String[] args) throws FileNotFoundException {
 
         competitiveFileManager.readFromFile(competitiveFileManager.competitiveMembersFile, listManager.compMember);
 
-
+*/
 
 }
 }

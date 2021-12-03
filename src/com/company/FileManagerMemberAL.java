@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class FileManagerMemberAL {
 
-    File memberFile = new File("Member.txt");
-    public void writeMemberToFile(ArrayList<Member> member, File memberFile) throws FileNotFoundException{
+    //File memberFile = new File("Member.txt");
+    public static void writeMemberToFile(ArrayList<Member> member, File memberFile) throws FileNotFoundException{
 
         PrintStream writeToMembersFile = new PrintStream(memberFile);
 
@@ -28,7 +28,7 @@ public class FileManagerMemberAL {
                     email + " " + activityform + " " + subscriptionamount);
         }
     }
-    public void readMemberFile (ArrayList<Member> members, File memberFile) throws FileNotFoundException {
+    public static void readMemberFile (ArrayList<Member> members, File memberFile) throws FileNotFoundException {
         Scanner read = new Scanner(new File("Member.txt"));
 
         while (read.hasNextLine()) {
