@@ -9,7 +9,8 @@ public class FileManagerCompetitive {
     //jeg oprettede filen i File-manageren for Competitive
     //Den fil indholder oplysninger som er relevant for træneren når har vil udtage svømmere
     //oplyninger bliver gemt i en ArrayList som indeholder resultater og kun resultater
-        File competitiveMembersFile = new File("CompetitiveMembersFile");
+
+        File compMemberFile = new File("CompMember.txt");
 
     //jeg oprettede efterfølgende en anden fil, der kun indeholder Result-Objekter
         //File resultsStorageFile = new File("ResultStorageFile.txt");

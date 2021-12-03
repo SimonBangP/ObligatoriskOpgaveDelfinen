@@ -1,7 +1,6 @@
 package com.company;
 
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -17,18 +16,12 @@ public static void main(String[] args) throws FileNotFoundException {
         FileManager fileManager = new FileManager();
         FileManagerRegMember fileManagerRegMember = new FileManagerRegMember();
         FileManagerCompMember fileManagerCompMember = new FileManagerCompMember();
-
-
         Scanner console = new Scanner(System.in);
-
 
             //File memberFile = new File("Member.txt");
             //File regMemberFile = new File("RegMember.txt");
             //File competitiveFile = new File("Competitive.txt");
             //FileManagerMemberAL.readMemberFile(listManager.member, memberFile);
-            fileManagerRegMember.readMemberFile(listManager.regMember, fileManagerRegMember.regMemberFile);
-            fileManagerCompMember.writeCompetitiveToFile(listManager.compMember, fileManagerCompMember.competitiveFile);
-
 
 
         Competitive Bob = new Competitive("Bob", "Johnson", 33, 34762378, "Bob@lol.com","active",1600,"crawl", 800, 07.10, "11/09-20");
@@ -105,7 +98,7 @@ public static void main(String[] args) throws FileNotFoundException {
 
                 case 7:
                 fileManagerRegMember.writeRegMemberToFile(listManager.regMember, fileManagerRegMember.regMemberFile);
-                fileManagerCompMember.writeCompetitiveToFile(listManager.compMember, fileManagerCompMember.competitiveFile);
+                fileManagerCompMember.writeCompetitiveToFile(listManager.compMember, fileManagerCompMember.compMemberFile);
                        break;
 
                default:
