@@ -15,14 +15,19 @@ public static void main(String[] args) throws FileNotFoundException {
         SubscriptionManager subscriptionManager = new SubscriptionManager();
         TrainingResultManager trainingResultManager = new TrainingResultManager();
         FileManager fileManager = new FileManager();
+        FileManagerRegMember fileManagerRegMember = new FileManagerRegMember();
+        FileManagerCompMember fileManagerCompMember = new FileManagerCompMember();
+
+
+        Scanner console = new Scanner(System.in);
 
 
             //File memberFile = new File("Member.txt");
-            File regMemberFile = new File("RegMember.txt");
-            File competitiveFile = new File("Competitive.txt");
+            //File regMemberFile = new File("RegMember.txt");
+            //File competitiveFile = new File("Competitive.txt");
             //FileManagerMemberAL.readMemberFile(listManager.member, memberFile);
-            FileManagerRegMember.readMemberFile(listManager.regMember, regMemberFile);
-            FileManagerCompMember.writeCompetitiveToFile(listManager.compMember, competitiveFile);
+            fileManagerRegMember.readMemberFile(listManager.regMember, fileManagerRegMember.regMemberFile);
+            fileManagerCompMember.writeCompetitiveToFile(listManager.compMember, fileManagerCompMember.competitiveFile);
 
 
 
@@ -39,18 +44,6 @@ public static void main(String[] args) throws FileNotFoundException {
         listManager.member.add(John);
         listManager.compMember.add(Simon);
         listManager.compMember.add(Mo);
-
-
-
-        Scanner console = new Scanner(System.in);
-/*
-        //memberManager.memberManager(console, listManager.newMember, listManager.newCompMember, listManager.newRegMember);
-
-
-        /*System.out.println(subscriptionManager.getSubscriptionSum(listManager.newMember,
-            listManager.newCompMember,listManager.newRegMember));*/
-
-
 
 
         System.out.println("|*******************************************************************************************************|");
@@ -111,8 +104,8 @@ public static void main(String[] args) throws FileNotFoundException {
 
 
                 case 7:
-                FileManagerRegMember.writeRegMemberToFile(listManager.regMember, regMemberFile);
-                FileManagerCompMember.writeCompetitiveToFile(listManager.compMember, competitiveFile);
+                fileManagerRegMember.writeRegMemberToFile(listManager.regMember, fileManagerRegMember.regMemberFile);
+                fileManagerCompMember.writeCompetitiveToFile(listManager.compMember, fileManagerCompMember.competitiveFile);
                        break;
 
                default:
