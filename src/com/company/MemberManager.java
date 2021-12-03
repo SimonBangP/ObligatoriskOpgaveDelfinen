@@ -12,17 +12,25 @@ public class MemberManager {
         System.out.println("In the following you will be able to add a member to the 'svømmeklubben Delfinen'\n" +
                 "You would be asked to enter: Sur name, last name, age, phonenumber and email Account\n\n" +
                 "The System will set that amount you should pay in subscription through your age\n" +
-                "When you have inserted all information above you should choose if the member is a regular swimmer or competitive\n\n+ " +
-                "*****************************\n\n");
 
-        System.out.println("Please enter your first name");
+                "When you have inserted all information above you should choose if the member is a regular swimmer or competitive\n\n+ " +
+                "\n\n");
+
+        System.out.println(" ******************");
+        System.out.println("| ENTER FIRST NAME |");
+        System.out.println(" ******************");
+
         String firstName = console.next();
 
-        System.out.println("Please enter your last name");
+        System.out.println(" ******************");
+        System.out.println("| ENTER LAST NAME |");
+        System.out.println(" ******************");
         String lastName = console.next();
 
 
-            System.out.println("Please enter your age");
+        System.out.println(" ******************");
+        System.out.println("|    ENTER AGE     |");
+        System.out.println(" ******************");
             age = console.nextInt();
 
 
@@ -32,19 +40,26 @@ public class MemberManager {
 
         }
 
-        System.out.println("Please enter your Phonenumber");
+        System.out.println(" ********************");
+        System.out.println("| ENTER PHONE NUMBER |");
+        System.out.println(" ********************");
         int phoneNumber = console.nextInt();
 
-        System.out.println("Please enter your email");
+        System.out.println(" ******************");
+        System.out.println("|    ENTER EMAIL   |");
+        System.out.println(" ******************");
         String email = console.next();
 
         int subscriptionAmount = 0;
 
-        System.out.println("Please enter your activity form. It could either be active or passive");
+        System.out.println(" *********************");
+        System.out.println("| ENTER ACTIVITY FORM |");
+        System.out.println("| 'PASSIVE OR ACTIVE' |");
+        System.out.println(" *********************");
         String activityForm = console.next();
 
         while (!(activityForm.equals("active")) && !(activityForm.equals("passive"))){
-            System.out.println("The entered activity form is not valid. Pleaser enter active or passive");
+            System.out.println("The entered activity form is not valid. Pleaser enter the word active or passive");
             activityForm = console.next();
 
         }
@@ -72,11 +87,14 @@ public class MemberManager {
         newMember.add(createNewMember);
 
         System.out.println("Perfect, now you have filled out most of it. Now you should choose if the member is a regular swimmer or a competitive");
-        System.out.println("Enter regular or competitive");
+        System.out.println(" ************************");
+        System.out.println("|   ENTER SWIMMER TYPE   |");
+        System.out.println("| REGULAR OR COMPETITIVE |");
+        System.out.println(" ************************");
         String swimmerAnswer = console.next();
 
         while (!(swimmerAnswer.equals("regular"))&& !(swimmerAnswer.equals("competitive"))){
-            System.out.println("The entered is not a membertype\n" + "Enter 1 is the member is a regular swimmer\n"
+            System.out.println("The entered is not a membertype\n" + "Enter 1 if the member is a regular swimmer\n"
                     + " Enter 2 if the member is a competitive swimmer");
             int memberType = console.nextInt();
             if (memberType == 1){
@@ -91,7 +109,11 @@ public class MemberManager {
 
 
         if (swimmerAnswer.equals("regular")){
-            System.out.println("Please enter how many times the member approximately are going to swim per week");
+            System.out.println(" ******************************");
+            System.out.println("| ENTER THE APPROXIMATELY TIME |");
+            System.out.println("| THE SWIMMER IS GOING TO SWIM |");
+            System.out.println("|           PER WEEK           |");
+            System.out.println(" ******************************");
             int swimPerWeek = console.nextInt();
 
             System.out.println("Please enter which of the four disciplines that is the members favourite");
