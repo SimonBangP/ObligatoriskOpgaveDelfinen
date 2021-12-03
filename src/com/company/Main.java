@@ -18,10 +18,9 @@ public static void main(String[] args) throws FileNotFoundException {
         FileManagerCompMember fileManagerCompMember = new FileManagerCompMember();
         Scanner console = new Scanner(System.in);
 
-            //File memberFile = new File("Member.txt");
-            //File regMemberFile = new File("RegMember.txt");
-            //File competitiveFile = new File("Competitive.txt");
-            //FileManagerMemberAL.readMemberFile(listManager.member, memberFile);
+            fileManagerRegMember.readMemberFile(listManager.regMember, fileManagerRegMember.regMemberFile);
+            fileManagerCompMember.readCompetitiveFile(listManager.compMember, fileManagerCompMember.compMemberFile);
+
 
 
         Competitive Bob = new Competitive("Bob", "Johnson", 33, 34762378, "Bob@lol.com","active",1600,"crawl", 800, 07.10, "11/09-20");
