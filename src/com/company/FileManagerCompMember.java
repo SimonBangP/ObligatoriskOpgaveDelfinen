@@ -8,11 +8,11 @@ import java.util.Scanner;
 
 public class FileManagerCompMember {
 
-    File competitiveFile = new File("Competitive.txt");
+    File compMemberFile = new File("CompMember.txt");
 
-        public void writeCompetitiveToFile (ArrayList<Competitive> competitive, File competitiveFile) throws FileNotFoundException{
+        public void writeCompetitiveToFile (ArrayList<Competitive> competitive, File compMemberFile) throws FileNotFoundException{
 
-            PrintStream writeToCompetitive = new PrintStream(competitiveFile);
+            PrintStream writeToCompetitive = new PrintStream(compMemberFile);
 
             for(int i = 0; i < competitive.size(); i++) {
 
