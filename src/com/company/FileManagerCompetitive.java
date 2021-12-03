@@ -92,91 +92,13 @@ public class FileManagerCompetitive {
                     newCompMember.get(i).bestTimes.add(result);
             }
             i ++;
-           //if(!read.hasNextLine()){break;}
-        }
-
-
-            //String line = read.nextLine();
-            //Scanner lineScan = new Scanner(line);
-
-
-
-            //String splittingHelp[] = line.split(":");
-/*
-            for (int i = 0; i < newCompMember.get(j).bestTimes.size(); i++){
-                String result = splittingHelp[i];
-
-                System.out.println(result);
-                //if(!read.hasNextLine()){
-                    break;
-                }
-            }j ++;*/
-
-
-
-
-
-
-
-
-
-
-
 
         }
 
 
-/*
-        do
-        while (read.hasNextLine()) {
 
-
-
-            String line = read.nextLine();
-
-
-            if(line.contentEquals("********************")){
-                //change member
-                i = i++;
-                break;
-            }
-
-            String splittingHelp[] = line.split(":", 2);
-
-            String lineTime = splittingHelp[0];
-            String lineDate = splittingHelp[1];
-
-            double resTime = Double.parseDouble(lineTime);
-
-            //System.out.println(resTime);
-            //System.out.println(lineDate);
-
-            Result r = new Result(resTime, lineDate);
-
-            newCompMember.get(i).bestTimes.add(r);
-
-            for(int j= 0; j < newCompMember.get(i).bestTimes.size(); j++){
-
-
-                System.out.println(newCompMember.get(i).bestTimes.get(j));
-            }
-
-
-
-
-
-
-            //System.out.println(line);
-            //Scanner lineScan = new Scanner(line);
-
-
-            //String result = lineScan.nextLine();
-
-
-            //System.out.println(result);
-
-        }*/
 
 
     }
+}
 
