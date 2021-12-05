@@ -5,14 +5,15 @@ package com.company;
 import java.util.*;
 
 public class Competitive  extends Member{
-    protected String discipline;
+    //protected String discipline;
+    protected Discipline discipline;
     protected double bestTime;
     protected String date;
     protected int distance;
     protected ArrayList<Result> bestTimes;//Den er lavet om fra <String> til <Result>
     //Dvs. vi har et object der hedder Result
 
-    public Competitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, String discipline, int distance, double bestTime, String date) {
+    public Competitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, Discipline discipline, /*String discipline,*/ int distance, double bestTime, String date) {
         super(firsName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
         this.discipline = discipline;
         this.bestTime = bestTime;
@@ -22,11 +23,11 @@ public class Competitive  extends Member{
     }
 
 
-    public String getDiscipline() {
+    public Discipline getDiscipline() {
         return discipline;
     }
 
-    public void setDiscipline(String discipline) {
+    public void setDiscipline(Discipline discipline) {
         this.discipline = discipline;
     }
 

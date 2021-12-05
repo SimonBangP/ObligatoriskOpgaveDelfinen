@@ -23,7 +23,7 @@ public class FileManagerCompMember {
                 String email = competitive.get(i).email;
                 String activityform = competitive.get(i).activityForm;
                 int subscriptionamount = competitive.get(i).subscriptionAmount;
-                String discipline = competitive.get(i).discipline;
+                Discipline discipline = competitive.get(i).discipline;
                 double besttime = competitive.get(i).bestTime;
                 String date = competitive.get(i).date;
                 int distance = competitive.get(i).distance;
@@ -36,7 +36,7 @@ public class FileManagerCompMember {
 
         }
 
-    public void readCompetitiveFile (ArrayList<Competitive> competitive, File competitiveFile) throws FileNotFoundException {
+    public void readCompetitiveFile (ArrayList<Competitive> competitive, File competitiveFile, DisciplineHandler disciplineManager) throws FileNotFoundException {
         Scanner read = new Scanner(new File("Competitive.txt"));
 
         while (read.hasNextLine()) {
@@ -52,11 +52,22 @@ public class FileManagerCompMember {
             String email = lineScan.next();
             String activityform = lineScan.next();
             int subscriptionamount = lineScan.nextInt();
-            String discipline = lineScan.next();
+            String disciplineScan = lineScan.next();
             double besttime = lineScan.nextDouble();
             String date = lineScan.next();
             int distance = lineScan.nextInt();
             //ArrayList<Result> besttimes =
+            Discipline discipline = null;
+            if(disciplineScan.equalsIgnoreCase("Butterfly")){
+                discipline = disciplineManager.discipline1;
+            }
+            else if(disciplineScan.equalsIgnoreCase("Crawl")){
+                discipline = disciplineManager.discipline2;
+            }
+            else if(disciplineScan.equalsIgnoreCase("Back-Crawl")){
+                discipline = disciplineManager.discipline3;
+            }
+            else {discipline = disciplineManager.discipline4;}
 
 
 

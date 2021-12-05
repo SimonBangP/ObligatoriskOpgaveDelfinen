@@ -7,8 +7,23 @@ import java.util.Scanner;
 public class MemberManager {
 
 
-    public void createMember (Scanner console, ArrayList<Member> newMember, ArrayList<Competitive> newCompMember, ArrayList<Regular> newRegMember) {
+    public void createMember (Scanner console, ArrayList<Member> newMember, ArrayList<Competitive> newCompMember, ArrayList<Regular> newRegMember, DisciplineHandler disciplineManager) {
+        String firstName = null;
+        String lastName = null;
         int age = 0;
+        int phoneNumber = 0;
+        int subscriptionAmount = 0;
+        String email = null;
+        String activityForm = null;
+        String swimmerTypeAnswer = null;
+        int swimPerWeek = 0;
+        String favouriteDiscipline = null;
+        Discipline discipline = null;
+        int distance = 0;
+        double bestTime = 0;
+        String date = null;
+
+
         System.out.println("In the following you will be able to add a member to the 'svømmeklubben Delfinen'\n" +
                 "You would be asked to enter: Sur name, last name, age, phonenumber and email Account\n\n" +
                 "The System will set that amount you should pay in subscription through your age\n" +
@@ -19,149 +34,223 @@ public class MemberManager {
         System.out.println(" ******************");
         System.out.println("| ENTER FIRST NAME |");
         System.out.println(" ******************");
-
-        String firstName = console.next();
+        firstName = console.next();
 
         System.out.println(" ******************");
         System.out.println("| ENTER LAST NAME |");
         System.out.println(" ******************");
-        String lastName = console.next();
-
+        lastName = console.next();
 
         System.out.println(" ******************");
         System.out.println("|    ENTER AGE     |");
         System.out.println(" ******************");
-            age = console.nextInt();
-
+        age = console.nextInt();
 
             while ( !(age > 0 && age < 120)) {
                 System.out.println("The age is not valid, please enter age again");
                 age = console.nextInt();
-
         }
 
         System.out.println(" ********************");
         System.out.println("| ENTER PHONE NUMBER |");
         System.out.println(" ********************");
-        int phoneNumber = console.nextInt();
+        phoneNumber = console.nextInt();
 
         System.out.println(" ******************");
         System.out.println("|    ENTER EMAIL   |");
         System.out.println(" ******************");
-        String email = console.next();
-
-        int subscriptionAmount = 0;
+        email = console.next();
 
         System.out.println(" *********************");
         System.out.println("| ENTER ACTIVITY FORM |");
         System.out.println("| 'PASSIVE OR ACTIVE' |");
         System.out.println(" *********************");
-        String activityForm = console.next();
+        activityForm = console.next();
 
         while (!(activityForm.equalsIgnoreCase("active")) && !(activityForm.equalsIgnoreCase("passive"))){
             System.out.println("The entered activity form is not valid. Pleaser enter the word active or passive");
             activityForm = console.next();
-
         }
 
         if (activityForm.equalsIgnoreCase("passive")){
             subscriptionAmount = 500;
-
         }
+
         if (activityForm.equalsIgnoreCase("active")) {
 
             if (age > 0 && age <18) {
                 subscriptionAmount = 1000;
 
-            } else if (age > 18 && age < 60) {
+            }  if (age > 18 && age < 60) {
                 subscriptionAmount = 1600;
 
-            } else if (age > 60) {
+            }  if (age > 60) {
                 subscriptionAmount = ((1600 / 100) * 75);
-
             }
-
     }
 
         /*Member createNewMember = new Member(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
         newMember.add(createNewMember);*/
 
-        System.out.println("Perfect, now you have filled out most of it. Now you should choose if the member is a regular swimmer or a competitive");
+        System.out.println("Perfect, now you have filled out most of it. Now you should choose if the member is a regular swimmer press 1 or a competitive press 2");
         System.out.println(" ************************");
         System.out.println("|   ENTER SWIMMER TYPE   |");
         System.out.println("| REGULAR OR COMPETITIVE |");
         System.out.println(" ************************");
-        String swimmerAnswer = console.next();
-
-        while (!(swimmerAnswer.equalsIgnoreCase("regular"))&& !(swimmerAnswer.equalsIgnoreCase("competitive"))){
+        //swimmerTypeAnswer = console.next();
+        int swimTypeAns2 = console.nextInt();
+/*
+        while (!(swimmerTypeAnswer.equalsIgnoreCase("regular"))&& !(swimmerTypeAnswer.equalsIgnoreCase("competitive"))){
             System.out.println("The entered is not a membertype\n" + "Enter 1 if the member is a regular swimmer\n"
                     + " Enter 2 if the member is a competitive swimmer");
             int memberType = console.nextInt();
             if (memberType == 1){
-                swimmerAnswer = "regular";
+                swimmerTypeAnswer = "regular";
             }
             //indsat else foran if nedunder her
             else if (memberType == 2){
-                swimmerAnswer = "competitive";
+                swimmerTypeAnswer = "competitive";
             }
+        }*/
 
+        switch (swimTypeAns2){//jeg har sat den ind i en switch
+            //ikke fordi det andet var forkert, men fordi jeg ledte efter fejlen med while-loopet
+            //og i et af forsøgene prøvede jeg at undgå scoup problemer, endte jeg med at oprette
+            //en switch, og nu da den er oprettet lod jeg den heller stå, for at tilføje bedre læselighed af koden.
+            case 1:
+
+                System.out.println(" ******************************");
+                System.out.println("| ENTER THE APPROXIMATELY TIME |");
+                System.out.println("| THE SWIMMER IS GOING TO SWIM |");
+                System.out.println("|           PER WEEK           |");
+                System.out.println(" ******************************");
+                swimPerWeek = console.nextInt();
+
+                System.out.println(" ******************");
+                System.out.println("| ENTER FAVOURITE |");
+                System.out.println("|    DISCIPLINE   |");
+                System.out.println(" ******************");
+                favouriteDiscipline = console.next();
+
+                Regular createRegMember = new Regular(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, swimPerWeek, favouriteDiscipline);
+                newRegMember.add(createRegMember);
+
+                break;
+            case 2 :
+
+                System.out.println(" ********************* ");
+                System.out.println("|    ENTER CURRENT    |");
+                System.out.println("| SWIMMING DISCIPLINE |");
+                System.out.println(" ********************* ");
+                String diciplineAns = console.next();
+
+                if(diciplineAns.equalsIgnoreCase("Butterfly")){
+                    discipline = disciplineManager.discipline1;
+                }
+                else if(diciplineAns.equalsIgnoreCase("Crawl")){
+                    discipline = disciplineManager.discipline2;
+                }
+                else if(diciplineAns.equalsIgnoreCase("Back-Crawl")){
+                    discipline = disciplineManager.discipline3;
+                }
+                else {discipline = disciplineManager.discipline4;}
+
+                System.out.println(" ******************");
+                System.out.println("|  ENTER SWIMMING  |");
+                System.out.println("|    DISTANCE      |");
+                System.out.println(" ******************");
+                distance = console.nextInt();
+
+                //@Har udkommenteret de to fields da, de nu bliver udskrevet i en liste over resultater
+                System.out.println(" *******************");
+                System.out.println("|  ENTER BEST TIME  |");
+                System.out.println("|     EX: 02.35     |");
+                System.out.println(" *******************");
+                bestTime = console.nextDouble();
+
+
+                System.out.println(" *************************");
+                System.out.println("| ENTER DATE OF BEST TIME |");
+                System.out.println(" *************************");
+                date = console.next();
+
+                Competitive createCompMember = new Competitive(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, discipline, distance, bestTime, date);
+                newCompMember.add(createCompMember);
+                break;
+
+            default:
+                return;
         }
 
-
-        if (swimmerAnswer.equals("regular")){
+/*
+        if (swimmerTypeAnswer.equalsIgnoreCase("regular")){
             System.out.println(" ******************************");
             System.out.println("| ENTER THE APPROXIMATELY TIME |");
             System.out.println("| THE SWIMMER IS GOING TO SWIM |");
             System.out.println("|           PER WEEK           |");
             System.out.println(" ******************************");
-            int swimPerWeek = console.nextInt();
+            swimPerWeek = console.nextInt();
 
             System.out.println(" ******************");
             System.out.println("| ENTER FAVOURITE |");
             System.out.println("|    DISCIPLINE   |");
             System.out.println(" ******************");
-            String favouriteDiscipline = console.next();
-
+            favouriteDiscipline = console.next();
 
         Regular createRegMember = new Regular(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, swimPerWeek, favouriteDiscipline);
         newRegMember.add(createRegMember);
 
 
-
-        } else if (swimmerAnswer.equals("competitive")){
+        } else if (swimmerTypeAnswer.equalsIgnoreCase("competitive")){
             System.out.println(" ********************* ");
             System.out.println("|    ENTER CURRENT    |");
             System.out.println("| SWIMMING DISCIPLINE |");
             System.out.println(" ********************* ");
-            String dicipline = console.next();
+            String diciplineAns = console.next();
+
+            if(diciplineAns.equalsIgnoreCase("Butterfly")){
+                discipline = disciplineManager.discipline1;
+            }
+            else if(diciplineAns.equalsIgnoreCase("Crawl")){
+                discipline = disciplineManager.discipline2;
+            }
+            else if(diciplineAns.equalsIgnoreCase("Back-Crawl")){
+                discipline = disciplineManager.discipline3;
+            }
+            else {discipline = disciplineManager.discipline4;}
 
             System.out.println(" ******************");
             System.out.println("|  ENTER SWIMMING  |");
             System.out.println("|    DISTANCE      |");
             System.out.println(" ******************");
-            int distance = console.nextInt();
+            distance = console.nextInt();
 
             //@Har udkommenteret de to fields da, de nu bliver udskrevet i en liste over resultater
             System.out.println(" *******************");
             System.out.println("|  ENTER BEST TIME  |");
             System.out.println("|     EX: 02.35     |");
             System.out.println(" *******************");
-            double bestTime = console.nextDouble();
+            bestTime = console.nextDouble();
 
 
             System.out.println(" *************************");
             System.out.println("| ENTER DATE OF BEST TIME |");
             System.out.println(" *************************");
-            String date = console.next();
+            date = console.next();
 
-            Competitive createCompMember = new Competitive(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, dicipline, distance, bestTime, date);
+            Competitive createCompMember = new Competitive(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, discipline, distance, bestTime, date);
             newCompMember.add(createCompMember);
 
-        } //else {
-            //System.out.println("The entered are not correct, please try again");
-            //swimmerAnswer = console.next();
+        }
+         else {
+            System.out.println("The entered are not correct, please try again");
+            //swimmerTypeAnswer = console.next();
+            }
 
-        //}
+
+*/
+
+
     }
     public void changeMember (Scanner console, ArrayList<Member> member, ArrayList<Regular> regMember, ArrayList<Competitive> compMember){
         System.out.println("You have chosen that you want to change some information on a member.");
