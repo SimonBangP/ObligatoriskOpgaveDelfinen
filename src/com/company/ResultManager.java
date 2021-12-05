@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.*;
 
-public class TrainingResultManager {
+public class ResultManager {
 
 
 
@@ -12,7 +12,7 @@ public class TrainingResultManager {
 
 // tilføj at forloopet også indhenter gamle bedste tid. Mellem mellem "+'er"
 
-    public void updateBestTime(Scanner console,ArrayList<Competitive> newCompMember){
+    public void updateBestTime(Scanner console,ArrayList<MemberCompetitive> newCompMember){
 
         //Tilføj System.out.print og bed brugeren indtaste hvilken medlem der skal ændres.
         System.out.println("Choose the swimmer which result you'd like to update!");
@@ -21,7 +21,7 @@ public class TrainingResultManager {
         for(int i = 0; i < newCompMember.size(); i++){
             System.out.println((i+ 1)+": "+newCompMember.get(i).getFirstName()+" "+
                     newCompMember.get(i).getLastName()+" "+newCompMember.get(i).getDiscipline()+" "+
-                    newCompMember.get(i).getDistance()/*+" "+newCompMember.get(i).getBestTime()+" "+
+                    newCompMember.get(i).getDistance() + " "+newCompMember.get(i).getResult()/*+" "+newCompMember.get(i).getBestTime()+" "+
                     newCompMember.get(i).getDate()*/);
         }
 
@@ -49,6 +49,7 @@ public class TrainingResultManager {
         new Result (bestTime, date);
         */
         newCompMember.get(indexOfCompetitive - 1).setResult(new Result (bestTime, date));
+        System.out.println(newCompMember.get(indexOfCompetitive - 1));
 
 
 

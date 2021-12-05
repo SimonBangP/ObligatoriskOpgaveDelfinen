@@ -14,7 +14,7 @@ public static void main(String[] args) throws FileNotFoundException {
         MemberManager memberManager = new MemberManager();
         ListManager listManager = new ListManager();
         SubscriptionManager subscriptionManager = new SubscriptionManager();
-        TrainingResultManager trainingResultManager = new TrainingResultManager();
+        ResultManager resultManager = new ResultManager();
         FileManager fileManager = new FileManager();
         FileManagerRegMember fileManagerRegMember = new FileManagerRegMember();
         FileManagerCompMember fileManagerCompMember = new FileManagerCompMember();
@@ -25,13 +25,13 @@ public static void main(String[] args) throws FileNotFoundException {
 
 
 
-        Competitive Bob = new Competitive("Bob", "Johnson", 33, 34762378, "Bob@lol.com","active",1600, disciplineManager.discipline2, 800, new Result(07.10, "11/09-20"));
+        MemberCompetitive Bob = new MemberCompetitive("Bob", "Johnson", 33, 34762378, "Bob@lol.com","active",1600, disciplineManager.discipline2, 800, new Result(07.10, "11/09-20"));
         Member Kim = new Member("Kim", "Larsen",62, 34873847,"Kim@lol.com", "active", 1200);
-        Regular Liz = new Regular("Liz","Smith", 35, 34748569, "Liz@lol.com","active", 1600, 3, "crawl");
+        MemberRegular Liz = new MemberRegular("Liz","Smith", 35, 34748569, "Liz@lol.com","active", 1600, 3, "crawl");
         Member John = new Member("John", "Smith", 52, 36363636, "John@lol.com","Passive",500);
-        Competitive Simon = new Competitive("Simon","Bang",25,22334455,"simon@simon.dk","Active", 1600, disciplineManager.discipline1, 600, new Result(05.35, "03/12-21"));
+        MemberCompetitive Simon = new MemberCompetitive("Simon","Bang",25,22334455,"simon@simon.dk","Active", 1600, disciplineManager.discipline1, 600, new Result(05.35, "03/12-21"));
         //Competitive Mo = new Competitive("Mo", "Stacks", 31, 33445566, "mo@mo.dk", "Active", 1600, disciplineManager.discipline4, 800, 10.22, "24/12-21");
-        Competitive Mo = new Competitive("Mo", "Stacks", 31, 33445566, "mo@mo.dk", "Active", 1600, disciplineManager.discipline4, 800, new Result(10.22, "24/12-21"));
+        MemberCompetitive Mo = new MemberCompetitive("Mo", "Stacks", 31, 33445566, "mo@mo.dk", "Active", 1600, disciplineManager.discipline4, 800, new Result(10.22, "24/12-21"));
 
         listManager.member.add(Kim);
         listManager.compMember.add(Bob);
@@ -94,7 +94,7 @@ public static void main(String[] args) throws FileNotFoundException {
                        break;
 
                case 5:
-                  trainingResultManager.updateBestTime(console, listManager.compMember);
+                  resultManager.updateBestTime(console, listManager.compMember);
                        break;
 
                case 6:
