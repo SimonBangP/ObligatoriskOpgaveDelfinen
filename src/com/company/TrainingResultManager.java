@@ -43,8 +43,15 @@ public class TrainingResultManager {
 
         //I starten havde vi kun muligheden for at tilføje/opdatere ét resultat pr. svømmer
         //nu er de to statments ligegyldige da hver konkurrence svømmer har en hel liste over resultater
-        newCompMember.get(indexOfCompetitive - 1).setBestTime(bestTime);
+       /* newCompMember.get(indexOfCompetitive - 1).setBestTime(bestTime);
         newCompMember.get(indexOfCompetitive - 1).setDate(date);
+        newCompMember.get(indexOfCompetitive - 1).result.setTime(bestTime);
+        new Result (bestTime, date);
+        */
+        newCompMember.get(indexOfCompetitive - 1).setResult(new Result (bestTime, date));
+
+
+
 
         //System.out.println(newCompMember.get(indexOfCompetitive - 1));
 

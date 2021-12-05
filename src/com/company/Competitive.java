@@ -7,18 +7,20 @@ import java.util.*;
 public class Competitive  extends Member{
     //protected String discipline;
     protected Discipline discipline;
-    protected double bestTime;
-    protected String date;
+    protected Result result;
+    //protected double bestTime;
+    //protected String date;
     protected int distance;
     protected ArrayList<Result> bestTimes;//Den er lavet om fra <String> til <Result>
     //Dvs. vi har et object der hedder Result
 
-    public Competitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, Discipline discipline, /*String discipline,*/ int distance, double bestTime, String date) {
+    public Competitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, Discipline discipline, /*String discipline,*/ int distance /*, double bestTime, String date*/ , Result result) {
         super(firsName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
         this.discipline = discipline;
-        this.bestTime = bestTime;
-        this.date = date;
+        //this.bestTime = bestTime;
+        //this.date = date;
         this.distance = distance;
+        this.result = result;
         bestTimes = new ArrayList<Result>();
     }
 
@@ -30,7 +32,7 @@ public class Competitive  extends Member{
     public void setDiscipline(Discipline discipline) {
         this.discipline = discipline;
     }
-
+/*
     public double getBestTime() {
         return bestTime;
     }
@@ -46,7 +48,7 @@ public class Competitive  extends Member{
     public void setDate(String date) {
         this.date = date;
     }
-
+*/
     public int getDistance() {
         return distance;
     }
@@ -55,14 +57,22 @@ public class Competitive  extends Member{
         this.distance = distance;
     }
 
+    public Result getResult() {
+        return result;
+    }
+
+    public void setResult(Result result) {
+        this.result = result;
+    }
+
     @Override
     public String toString() {
         return super.toString() +
 
                 "discipline= " + discipline +
-                ", distance(Meter)= " + distance  +"Meter" +
+                ", distance(Meter)= " + distance  +" Meter"/* +
                 ", bestTime(MM/SS)= " + bestTime + "MM/SS" +
-                ", date= " + date;
+                ", date= " + date*/;
 
     }
 }
