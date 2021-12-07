@@ -153,11 +153,7 @@ public class MemberManager {
                 else if(diciplineAns.equalsIgnoreCase("Back-Crawl")){
                     discipline = disciplineManager.discipline3;
                 }
-                else if (diciplineAns.equalsIgnoreCase("chest")){
-                    discipline = disciplineManager.discipline4;}
-                else {
-                    System.out.println("Wrong value try again!");
-                }
+                else {discipline = disciplineManager.discipline4;}
 
                 System.out.println(" ******************");
                 System.out.println("|  ENTER SWIMMING  |");
@@ -166,12 +162,6 @@ public class MemberManager {
                 distance = console.nextInt();
 
                 //@Har udkommenteret de to fields da, de nu bliver udskrevet i en liste over resultater
-
-                //Når man registrere sig i klubben for første gang, så har man ikke en beste tid endnu
-                //derfor er det mest optimalt at udkommentere de to næste spørgsmål, så de  sættes til 0
-                //som default, lige når man har tilmeldt sig klubben.
-                //dernæst vil det være trænerens job at registrere sine svømmeres bedste tid
-                //ind fra vores case : 5 ind i main.
                 System.out.println(" *******************");
                 System.out.println("|  ENTER BEST TIME  |");
                 System.out.println("|     EX: 02.35     |");
@@ -184,7 +174,7 @@ public class MemberManager {
                 System.out.println(" *************************");
                 date = console.next();
 
-                Competitive createCompMember = new Competitive(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, discipline, distance, new Result(bestTime, date));
+                Competitive createCompMember = new Competitive(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, discipline, distance, bestTime, date);
                 newCompMember.add(createCompMember);
                 break;
 

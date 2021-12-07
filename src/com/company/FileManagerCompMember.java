@@ -24,15 +24,14 @@ public class FileManagerCompMember {
                 String activityform = competitive.get(i).activityForm;
                 int subscriptionamount = competitive.get(i).subscriptionAmount;
                 Discipline discipline = competitive.get(i).discipline;
-                double besttime = competitive.get(i).result.getTime();
-                String date = competitive.get(i).result.regDate;
+                double besttime = competitive.get(i).bestTime;
+                String date = competitive.get(i).date;
                 int distance = competitive.get(i).distance;
                 //ArrayList<String> besttimes = competitive.get(i).bestTimes;
 
                 writeToCompetitive.println(firstName + " " + lastName + " " + age + " " + phoneNumber + " " +
                         email + " " + activityform + " " + subscriptionamount + " " + discipline + " " + besttime +
-                        " " + date + " " + distance);//hvorfor er rækkefølgen sådan?
-                // det skulle være: Disciplin - Distance - bestTime - bestTimeDate
+                        " " + date + " " + distance);
             }
 
         }
@@ -56,7 +55,7 @@ public class FileManagerCompMember {
             String disciplineScan = lineScan.next();
             double besttime = lineScan.nextDouble();
             String date = lineScan.next();
-            int distance = lineScan.nextInt();//husk at rette rækkefølgen her ogsp
+            int distance = lineScan.nextInt();
             //ArrayList<Result> besttimes =
             Discipline discipline = null;
             if(disciplineScan.equalsIgnoreCase("Butterfly")){
@@ -68,15 +67,11 @@ public class FileManagerCompMember {
             else if(disciplineScan.equalsIgnoreCase("Back-Crawl")){
                 discipline = disciplineManager.discipline3;
             }
-            else if (disciplineScan.equalsIgnoreCase("chest")){
-                discipline = disciplineManager.discipline4;}
-            else {
-                System.out.println("Wrong value try again!");
-            }
+            else {discipline = disciplineManager.discipline4;}
 
 
 
-            Competitive newCompetitve = new Competitive(firstName,lastName,age,phoneNumber,email,activityform,subscriptionamount,discipline,distance,new Result(besttime,date));
+            Competitive newCompetitve = new Competitive(firstName,lastName,age,phoneNumber,email,activityform,subscriptionamount,discipline,distance,besttime,date);
 
             competitive.add(newCompetitve);
 

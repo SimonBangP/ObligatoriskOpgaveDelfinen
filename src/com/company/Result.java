@@ -13,7 +13,7 @@ public class Result {
 
     @Override
     public String toString() {
-        return time +" " + regDate;
+        return time +"\t" + regDate;
     }
 
     public double getTime() {
