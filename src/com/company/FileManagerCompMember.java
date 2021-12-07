@@ -10,33 +10,33 @@ public class FileManagerCompMember {
 
     File compMemberFile = new File("CompMember.txt");
 
-        public void writeCompetitiveToFile (ArrayList<Competitive> competitive, File compMemberFile) throws FileNotFoundException{
+        public void writeCompetitiveToFile (ArrayList<MemberCompetitive> memberCompetitive, File compMemberFile) throws FileNotFoundException{
 
             PrintStream writeToCompetitive = new PrintStream(compMemberFile);
 
-            for(int i = 0; i < competitive.size(); i++) {
+            for(int i = 0; i < memberCompetitive.size(); i++) {
 
-                String firstName = competitive.get(i).firstName;
-                String lastName = competitive.get(i).lastName;
-                int age = competitive.get(i).age;
-                int phoneNumber = competitive.get(i).phoneNumber;
-                String email = competitive.get(i).email;
-                String activityform = competitive.get(i).activityForm;
-                int subscriptionamount = competitive.get(i).subscriptionAmount;
-                String discipline = competitive.get(i).discipline;
-                double besttime = competitive.get(i).bestTime;
-                String date = competitive.get(i).date;
-                int distance = competitive.get(i).distance;
+                String firstName = memberCompetitive.get(i).firstName;
+                String lastName = memberCompetitive.get(i).lastName;
+                int age = memberCompetitive.get(i).age;
+                int phoneNumber = memberCompetitive.get(i).phoneNumber;
+                String email = memberCompetitive.get(i).email;
+                String activityform = memberCompetitive.get(i).activityForm;
+                int subscriptionamount = memberCompetitive.get(i).subscriptionAmount;
+                String discipline = memberCompetitive.get(i).discipline;
+                double besttime = memberCompetitive.get(i).bestTime;
+                String date = memberCompetitive.get(i).date;
+                int distance = memberCompetitive.get(i).distance;
                 //ArrayList<String> besttimes = competitive.get(i).bestTimes;
 
                 writeToCompetitive.println(firstName + " " + lastName + " " + age + " " + phoneNumber + " " +
-                        email + " " + activityform + " " + subscriptionamount + " " + discipline + " " + besttime +
-                        " " + date + " " + distance);
+                        email + " " + activityform + " " + subscriptionamount + " " + discipline + " " + distance + " " + besttime +
+                        " " + date);
             }
 
         }
 
-    public void readCompetitiveFile (ArrayList<Competitive> competitive, File competitiveFile) throws FileNotFoundException {
+    public void readCompetitiveFile (ArrayList<MemberCompetitive> memberCompetitive, File competitiveFile) throws FileNotFoundException {
         Scanner read = new Scanner(new File("Competitive.txt"));
 
         while (read.hasNextLine()) {
@@ -53,16 +53,17 @@ public class FileManagerCompMember {
             String activityform = lineScan.next();
             int subscriptionamount = lineScan.nextInt();
             String discipline = lineScan.next();
+            int distance = lineScan.nextInt();
             double besttime = lineScan.nextDouble();
             String date = lineScan.next();
-            int distance = lineScan.nextInt();
+
             //ArrayList<Result> besttimes =
 
 
 
-            Competitive newCompetitve = new Competitive(firstName,lastName,age,phoneNumber,email,activityform,subscriptionamount,discipline,distance,besttime,date);
+            MemberCompetitive newCompetitve = new MemberCompetitive(firstName,lastName,age,phoneNumber,email,activityform,subscriptionamount,discipline,distance,besttime,date);
 
-            competitive.add(newCompetitve);
+            memberCompetitive.add(newCompetitve);
 
         }
     }

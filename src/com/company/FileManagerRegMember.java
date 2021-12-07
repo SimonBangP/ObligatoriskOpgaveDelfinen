@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class FileManagerRegMember {
 
     File regMemberFile = new File("RegMember.txt");
-    public void writeRegMemberToFile(ArrayList<Regular> regMember, File regMemberFile) throws FileNotFoundException {
+    public void writeRegMemberToFile(ArrayList<MemberRegular> regMember, File regMemberFile) throws FileNotFoundException {
 
         PrintStream writeToMembersFile = new PrintStream(regMemberFile);
 
@@ -30,8 +30,8 @@ public class FileManagerRegMember {
                     email + " " + activityform + " " + subscriptionamount + " " +  swimsPerWeek + " " + favouriteDiscipline );
         }
     }
-    public void readMemberFile (ArrayList<Regular> regMembers, File regMemberFile) throws FileNotFoundException {
-        Scanner read = new Scanner(new File("regMember.txt"));
+    public void readMemberFile (ArrayList<MemberRegular> regMembers, File regMemberFile) throws FileNotFoundException {
+        Scanner read = new Scanner(new File("RegMember.txt"));
 
         while (read.hasNextLine()) {
             String line = read.nextLine();
@@ -48,7 +48,7 @@ public class FileManagerRegMember {
             int swimsPerWeek = lineScan.nextInt();
             String favouriteDiscipline = lineScan.next();
 
-            Regular newRegMember = new Regular(firstName,lastName,age,phoneNumber,email,activityform,subscriptionamount, swimsPerWeek, favouriteDiscipline );
+            MemberRegular newRegMember = new MemberRegular(firstName,lastName,age,phoneNumber,email,activityform,subscriptionamount, swimsPerWeek, favouriteDiscipline );
 
             regMembers.add(newRegMember);
 

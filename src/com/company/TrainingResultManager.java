@@ -12,7 +12,7 @@ public class TrainingResultManager {
 
 // tilføj at forloopet også indhenter gamle bedste tid. Mellem mellem "+'er"
 
-    public void updateBestTime(Scanner console,ArrayList<Competitive> newCompMember){
+    public void updateBestTime(Scanner console,ArrayList<MemberCompetitive> newCompMember){
 
         //Tilføj System.out.print og bed brugeren indtaste hvilken medlem der skal ændres.
         System.out.println("Choose the swimmer which result you'd like to update!");

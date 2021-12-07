@@ -10,6 +10,7 @@ protected String email;
 protected String activityForm;
 protected int subscriptionAmount;
 
+
 public Member(String firstName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount){
 this.firstName = firstName;
 this.lastName = lastName;

@@ -4,20 +4,22 @@ package com.company;
 
 import java.util.*;
 
-public class Competitive  extends Member{
+public class MemberCompetitive extends Member{
     protected String discipline;
+    protected int distance;
     protected double bestTime;
     protected String date;
-    protected int distance;
+
     protected ArrayList<Result> bestTimes;//Den er lavet om fra <String> til <Result>
     //Dvs. vi har et object der hedder Result
 
-    public Competitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, String discipline, int distance, double bestTime, String date) {
+    public MemberCompetitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, String discipline, int distance, double bestTime, String date) {
         super(firsName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
         this.discipline = discipline;
+        this.distance = distance;
         this.bestTime = bestTime;
         this.date = date;
-        this.distance = distance;
+
         bestTimes = new ArrayList<Result>();
     }
 
