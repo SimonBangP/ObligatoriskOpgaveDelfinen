@@ -10,33 +10,34 @@ public class FileManagerCompMember {
 
     File compMemberFile = new File("CompMember.txt");
 
-        public void writeCompetitiveToFile (ArrayList<MemberCompetitive> memberCompetitive, File compMemberFile) throws FileNotFoundException{
+        public void writeCompetitiveToFile (ArrayList<Competitive> competitive, File compMemberFile) throws FileNotFoundException{
 
             PrintStream writeToCompetitive = new PrintStream(compMemberFile);
 
-            for(int i = 0; i < memberCompetitive.size(); i++) {
+            for(int i = 0; i < competitive.size(); i++) {
 
-                String firstName = memberCompetitive.get(i).firstName;
-                String lastName = memberCompetitive.get(i).lastName;
-                int age = memberCompetitive.get(i).age;
-                int phoneNumber = memberCompetitive.get(i).phoneNumber;
-                String email = memberCompetitive.get(i).email;
-                String activityform = memberCompetitive.get(i).activityForm;
-                int subscriptionamount = memberCompetitive.get(i).subscriptionAmount;
-                Discipline discipline = memberCompetitive.get(i).discipline;
-                double besttime = memberCompetitive.get(i).result.getTime();
-                String date = memberCompetitive.get(i).result.regDate;
-                int distance = memberCompetitive.get(i).distance;
+                String firstName = competitive.get(i).firstName;
+                String lastName = competitive.get(i).lastName;
+                int age = competitive.get(i).age;
+                int phoneNumber = competitive.get(i).phoneNumber;
+                String email = competitive.get(i).email;
+                String activityform = competitive.get(i).activityForm;
+                int subscriptionamount = competitive.get(i).subscriptionAmount;
+                Discipline discipline = competitive.get(i).discipline;
+                double besttime = competitive.get(i).result.getTime();
+                String date = competitive.get(i).result.regDate;
+                int distance = competitive.get(i).distance;
                 //ArrayList<String> besttimes = competitive.get(i).bestTimes;
 
                 writeToCompetitive.println(firstName + " " + lastName + " " + age + " " + phoneNumber + " " +
                         email + " " + activityform + " " + subscriptionamount + " " + discipline + " " + besttime +
-                        " " + date + " " + distance);//rettelse af rækkefølgen: Disciplin - Distance - bestTime - bestTimeDate
+                        " " + date + " " + distance);//hvorfor er rækkefølgen sådan?
+                // det skulle være: Disciplin - Distance - bestTime - bestTimeDate
             }
 
         }
 
-    public void readCompetitiveFile (ArrayList<MemberCompetitive> memberCompetitive, File competitiveFile, DisciplineHandler disciplineManager) throws FileNotFoundException {
+    public void readCompetitiveFile (ArrayList<Competitive> competitive, File competitiveFile, DisciplineHandler disciplineManager) throws FileNotFoundException {
         Scanner read = new Scanner(new File("Competitive.txt"));
 
         while (read.hasNextLine()) {
@@ -55,7 +56,7 @@ public class FileManagerCompMember {
             String disciplineScan = lineScan.next();
             double besttime = lineScan.nextDouble();
             String date = lineScan.next();
-            int distance = lineScan.nextInt();//husk at rette rækkefølgen her også
+            int distance = lineScan.nextInt();//husk at rette rækkefølgen her ogsp
             //ArrayList<Result> besttimes =
             Discipline discipline = null;
             if(disciplineScan.equalsIgnoreCase("Butterfly")){
@@ -75,9 +76,9 @@ public class FileManagerCompMember {
 
 
 
-            MemberCompetitive newCompetitve = new MemberCompetitive(firstName,lastName,age,phoneNumber,email,activityform,subscriptionamount,discipline,distance,new Result(besttime,date));
+            Competitive newCompetitve = new Competitive(firstName,lastName,age,phoneNumber,email,activityform,subscriptionamount,discipline,distance,new Result(besttime,date));
 
-            memberCompetitive.add(newCompetitve);
+            competitive.add(newCompetitve);
 
         }
     }

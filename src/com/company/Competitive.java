@@ -4,16 +4,17 @@ package com.company;
 
 import java.util.*;
 
-public class MemberCompetitive extends Member{
+public class Competitive  extends Member{
     //protected String discipline;
     protected Discipline discipline;
+    protected Result result;
     //protected double bestTime;
     //protected String date;
-    protected Result result;
     protected int distance;
-    protected ArrayList<Result> bestTimes;//Hvis en svømmer skal have en liste over mange resultater
+    protected ArrayList<Result> bestTimes;//Den er lavet om fra <String> til <Result>
+    //Dvs. vi har et object der hedder Result
 
-    public MemberCompetitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, Discipline discipline, /*String discipline,*/ int distance /*, double bestTime, String date*/ , Result result) {
+    public Competitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, Discipline discipline, /*String discipline,*/ int distance /*, double bestTime, String date*/ , Result result) {
         super(firsName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
         this.discipline = discipline;
         //this.bestTime = bestTime;
@@ -69,9 +70,7 @@ public class MemberCompetitive extends Member{
         return super.toString() +
 
                 "discipline= " + discipline +
-                ", distance(Meter)= " + distance  +" Meter "
-                + "BestTime " + result.getTime() + " Date: " + result.getRegDate()
-                /* +
+                ", distance(Meter)= " + distance  +" Meter"/* +
                 ", bestTime(MM/SS)= " + bestTime + "MM/SS" +
                 ", date= " + date*/;
 

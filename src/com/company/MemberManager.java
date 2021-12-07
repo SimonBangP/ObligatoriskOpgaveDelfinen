@@ -1,12 +1,13 @@
 package com.company;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MemberManager {
 
 
-    public void createMember (Scanner console, ArrayList<Member> newMember, ArrayList<MemberCompetitive> newCompMember, ArrayList<MemberRegular> newRegMember, DisciplineHandler disciplineManager) {
+    public void createMember (Scanner console, ArrayList<Member> newMember, ArrayList<Competitive> newCompMember, ArrayList<Regular> newRegMember, DisciplineHandler disciplineManager) {
         String firstName = null;
         String lastName = null;
         int age = 0;
@@ -131,7 +132,7 @@ public class MemberManager {
                 System.out.println(" ******************");
                 favouriteDiscipline = console.next();
 
-                MemberRegular createRegMember = new MemberRegular(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, swimPerWeek, favouriteDiscipline);
+                Regular createRegMember = new Regular(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, swimPerWeek, favouriteDiscipline);
                 newRegMember.add(createRegMember);
 
                 break;
@@ -183,7 +184,7 @@ public class MemberManager {
                 System.out.println(" *************************");
                 date = console.next();
 
-                MemberCompetitive createCompMember = new MemberCompetitive(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, discipline, distance, new Result(bestTime, date));
+                Competitive createCompMember = new Competitive(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, discipline, distance, new Result(bestTime, date));
                 newCompMember.add(createCompMember);
                 break;
 
@@ -261,7 +262,7 @@ public class MemberManager {
 
 
     }
-    public void changeMember (Scanner console, ArrayList<Member> member, ArrayList<MemberRegular> regMember, ArrayList<MemberCompetitive> compMember){
+    public void changeMember (Scanner console, ArrayList<Member> member, ArrayList<Regular> regMember, ArrayList<Competitive> compMember){
         System.out.println("You have chosen that you want to change some information on a member.");
 
         System.out.println("Please enter which type of member you want to change" +
@@ -540,7 +541,7 @@ public class MemberManager {
     }
 
 
-    public void deleteMember (Scanner console, ArrayList<Member> member, ArrayList<MemberRegular> memberRegular, ArrayList<MemberCompetitive> compMember){
+    public void deleteMember (Scanner console, ArrayList<Member> member, ArrayList<Regular> regularMember, ArrayList<Competitive> compMember){
         System.out.println("Here you will be able to delete a member from the list and file. You should choose from which membertype you want to delete" +
                 "You can choose: member, regular or competitive");
 
@@ -568,7 +569,7 @@ public class MemberManager {
             System.out.println("Please enter the number of the Regular member you want to delete");
             int deleteMember = console.nextInt();
 
-            memberRegular.remove((deleteMember - 1));
+            regularMember.remove((deleteMember - 1));
 
 
         } else {

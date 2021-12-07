@@ -2,6 +2,7 @@ package com.company;
 
 import java.io.*;
 import java.util.*;
+import java.text.*;
 
 public class FileManagerCompetitive {
 
@@ -15,7 +16,7 @@ public class FileManagerCompetitive {
         //File resultsStorageFile = new File("ResultStorageFile.txt");
 
     //I metoden for jeg brug for en liste over konkurrence svømmere og en fil som parameter
-    public void writeToFile(File competitiveMembersFile, ArrayList<MemberCompetitive> newCompMember)throws FileNotFoundException {
+    public void writeToFile(File competitiveMembersFile, ArrayList<Competitive> newCompMember)throws FileNotFoundException {
 
         //Jeg starter med at oprette mit PrintStream object
         PrintStream printStream = new PrintStream(competitiveMembersFile);
@@ -60,7 +61,7 @@ public class FileManagerCompetitive {
     //jeg er blevet vejledet til at have en seperat fil som er en test fil
     //I den fil skal der ikke stå informationer, men kun tokens sepereret af ":".
     //De tokens gemmes til ArrayListerne til de forskellige konkurrence svømmere
-    public void writeToFileProgrammer(File resultsStorageFile, ArrayList<MemberCompetitive> newCompMember)throws FileNotFoundException{
+    public void writeToFileProgrammer(File resultsStorageFile, ArrayList<Competitive> newCompMember)throws FileNotFoundException{
 
         PrintStream printStream = new PrintStream(resultsStorageFile);
 
@@ -72,7 +73,7 @@ public class FileManagerCompetitive {
         }
     }
 
-    public void readFromFile(File competitiveMembersFile, ArrayList<MemberCompetitive> newCompMember)throws FileNotFoundException {
+    public void readFromFile(File competitiveMembersFile, ArrayList<Competitive> newCompMember)throws FileNotFoundException {
 
         Scanner read = new Scanner(competitiveMembersFile);
         //int j = 0;
