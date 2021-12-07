@@ -24,9 +24,10 @@ public class FileManagerCompMember {
                 String activityform = memberCompetitive.get(i).activityForm;
                 int subscriptionamount = memberCompetitive.get(i).subscriptionAmount;
                 String discipline = memberCompetitive.get(i).discipline;
+                int distance = memberCompetitive.get(i).distance;
                 double besttime = memberCompetitive.get(i).bestTime;
                 String date = memberCompetitive.get(i).date;
-                int distance = memberCompetitive.get(i).distance;
+
                 //ArrayList<String> besttimes = competitive.get(i).bestTimes;
 
                 writeToCompetitive.println(firstName + " " + lastName + " " + age + " " + phoneNumber + " " +
