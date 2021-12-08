@@ -35,7 +35,7 @@ public class TrainingResultManager {
 
 
         System.out.println("Enter new BestTime");
-        double bestTime = console.nextDouble();
+        String bestTime = console.next();
 
         //kan man evt. bruge local time feature i den sammenhæng???
         System.out.println("Enter the date");
