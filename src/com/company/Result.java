@@ -1,9 +1,10 @@
+// Author @ Mohammad Stack
+
 package com.company;
 
 public class Result {
     protected double time;
     protected String regDate;
-
 
 
     public Result(double time, String regDate) {
@@ -13,7 +14,7 @@ public class Result {
 
     @Override
     public String toString() {
-        return time +"\t" + regDate;
+        return time + "\t" + regDate;
     }
 
     public double getTime() {

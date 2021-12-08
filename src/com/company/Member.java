@@ -1,3 +1,5 @@
+// Author @ Simon Bang
+
 package com.company;
 
 public class Member {

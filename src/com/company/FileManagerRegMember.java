@@ -1,3 +1,5 @@
+// Author @ Mohammad Stack
+
 package com.company;
 
 import java.io.File;
@@ -9,6 +11,7 @@ import java.util.Scanner;
 public class FileManagerRegMember {
 
     File regMemberFile = new File("RegMember.txt");
+
     public void writeRegMemberToFile(ArrayList<MemberRegular> regMember, File regMemberFile) throws FileNotFoundException {
 
         PrintStream writeToMembersFile = new PrintStream(regMemberFile);
@@ -30,8 +33,8 @@ public class FileManagerRegMember {
                     email + " " + activityform + " " + subscriptionamount + " " +  swimsPerWeek + " " + favouriteDiscipline );
         }
     }
-    public void readMemberFile (ArrayList<MemberRegular> regMembers, File regMemberFile) throws FileNotFoundException {
-        Scanner read = new Scanner(new File("RegMember.txt"));
+    public void readRegMemberFile(ArrayList<MemberRegular> regMembers, File regMemberFile) throws FileNotFoundException {
+        Scanner read = new Scanner(regMemberFile);
 
         while (read.hasNextLine()) {
             String line = read.nextLine();

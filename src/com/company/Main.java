@@ -1,3 +1,8 @@
+// Author @ Nikolaj Skibsted
+// Author @ Mohammad Stack
+// Author @ Sille Lorentzen
+// Author @ Simon Bang
+
 package com.company;
 
 
@@ -6,19 +11,19 @@ import java.util.Scanner;
 
 public class Main {
 
-
 public static void main(String[] args) throws FileNotFoundException {
 
         MemberManager memberManager = new MemberManager();
         ListManager listManager = new ListManager();
         SubscriptionManager subscriptionManager = new SubscriptionManager();
         TrainingResultManager trainingResultManager = new TrainingResultManager();
-        FileManager fileManager = new FileManager();
+
         FileManagerRegMember fileManagerRegMember = new FileManagerRegMember();
         FileManagerCompMember fileManagerCompMember = new FileManagerCompMember();
-        Scanner console = new Scanner(System.in);
+             Scanner console = new Scanner(System.in);
 
-            fileManagerRegMember.readMemberFile(listManager.regMember, fileManagerRegMember.regMemberFile);
+
+            fileManagerRegMember.readRegMemberFile(listManager.regMember, fileManagerRegMember.regMemberFile);
             fileManagerCompMember.readCompetitiveFile(listManager.compMember, fileManagerCompMember.compMemberFile);
 
 
@@ -92,27 +97,9 @@ public static void main(String[] args) throws FileNotFoundException {
 
 
 
-
-
-
-/*
-        MemberCompetitive Bob = new MemberCompetitive("Bob", "Johnson", 33, 34762378, "Bob@lol.com","active",1600,"crawl", 800, "07.10", "11/09-20");
-        Member Kim = new Member("Kim", "Larsen",62, 34873847,"Kim@lol.com", "active", 1200);
-        MemberRegular Liz = new MemberRegular("Liz","Smith", 35, 34748569, "Liz@lol.com","active", 1600, 3, "crawl");
-        Member John = new Member("John", "Smith", 52, 36363636, "John@lol.com","Passive",500);
-        MemberCompetitive Simon = new MemberCompetitive("Simon","Bang",25,22334455,"simon@simon.dk","Active", 1600, "Butterfly", 600, "05.35", "03/12-21");
-        MemberCompetitive Mo = new MemberCompetitive("Mo", "Stacks", 31, 33445566, "mo@mo.dk", "Active", 1600, "Chest", 800, "10.22", "24/12-21");
-        */
         int answer = 0;
 
-       // listManager.member.add(Kim);
-       // listManager.compMember.add(Bob);
-        //listManager.regMember.add(Liz);
-       // listManager.member.add(John);
-        //listManager.compMember.add(Simon);
-        //listManager.compMember.add(Mo);
-
-        while (answer !=7){
+            while (answer !=7){
 
         System.out.println("               |*******************************************************************************************************|");
         System.out.println("               |       ______________                    ______________                      ______________            |");
@@ -141,8 +128,6 @@ public static void main(String[] args) throws FileNotFoundException {
 
 
         answer = console.nextInt();
-
-       // while (answer !=7){
 
        switch (answer){
 
@@ -182,37 +167,9 @@ public static void main(String[] args) throws FileNotFoundException {
 
                default:
                        break;
+            }
         }
     }
-
-
-
-   /* //Mo's test områdde
-  //Create a test member
-    //memberManager.memberManager(console, listManager.newMember, listManager.newCompMember, listManager.newRegMember);
-    //update his/her results list
-    TrainingResultManager resultManager = new TrainingResultManager();
-   /* resultManager.updateBestTime(console, listManager.newCompMember);
-    resultManager.updateBestTime(console, listManager.newCompMember);
-    resultManager.updateBestTime(console, listManager.newCompMember);
-    //print to file to see result
-
-    competitiveFileManager.writeToFile(competitiveFileManager.competitiveMembersFile, listManager.newCompMember);
-
-    //competitiveFileManager.readFromFile(competitiveFileManager.competitiveMembersFile, listManager.newCompMember);
-*/
-   /* FileManagerCompetitive competitiveFileManager = new FileManagerCompetitive();
-    //trainingResultManager.updateBestTime(console, listManager.compMember);
-        //trainingResultManager.updateBestTime(console, listManager.compMember);
-        //trainingResultManager.updateBestTime(console, listManager.compMember);
-        //trainingResultManager.updateBestTime(console, listManager.compMember);
-        //competitiveFileManager
-
-        competitiveFileManager.readFromFile(competitiveFileManager.competitiveMembersFile, listManager.compMember);
-
-*/
-
-}
 }
 
 

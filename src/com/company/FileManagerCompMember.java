@@ -1,3 +1,5 @@
+// Author @ Nikolaj Skibsted
+
 package com.company;
 
 import java.io.File;
@@ -28,7 +30,6 @@ public class FileManagerCompMember {
                 String bestTime = memberCompetitive.get(i).bestTime;
                 String date = memberCompetitive.get(i).date;
 
-                //ArrayList<String> besttimes = competitive.get(i).bestTimes;
 
                 writeToCompetitive.println(firstName + " " + lastName + " " + age + " " + phoneNumber + " " +
                         email + " " + activityform + " " + subscriptionamount + " " + discipline + " " + distance + " " + bestTime +
@@ -38,7 +39,7 @@ public class FileManagerCompMember {
         }
 
     public void readCompetitiveFile (ArrayList<MemberCompetitive> memberCompetitive, File compMemberFile) throws FileNotFoundException {
-        Scanner read = new Scanner(new File("CompMember.txt"));
+        Scanner read = new Scanner(compMemberFile);
 
         while (read.hasNextLine()) {
 

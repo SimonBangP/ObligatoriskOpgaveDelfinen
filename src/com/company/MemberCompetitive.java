@@ -10,8 +10,6 @@ public class MemberCompetitive extends Member{
     protected String bestTime;
     protected String date;
 
-    protected ArrayList<Result> bestTimes;//Den er lavet om fra <String> til <Result>
-    //Dvs. vi har et object der hedder Result
 
     public MemberCompetitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, String discipline, int distance, String bestTime, String date) {
         super(firsName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
@@ -20,7 +18,7 @@ public class MemberCompetitive extends Member{
         this.bestTime = bestTime;
         this.date = date;
 
-        bestTimes = new ArrayList<Result>();
+
     }
 
 
@@ -58,11 +56,12 @@ public class MemberCompetitive extends Member{
 
     @Override
     public String toString() {
-        return super.toString() +
+        return
+                super.toString() +
 
                 "discipline= " + discipline +
-                ", distance(Meter)= " + distance  +"Meter" +
-                ", bestTime(MM/SS)= " + bestTime + "MM/SS" +
+                ", distance(Meter)= " + distance  +" Meter" +
+                ", bestTime(MM/SS)= " + bestTime + " MM/SS" +
                 ", date= " + date;
 
     }
