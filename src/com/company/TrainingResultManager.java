@@ -15,14 +15,20 @@ public class TrainingResultManager {
     public void updateBestTime(Scanner console,ArrayList<MemberCompetitive> newCompMember){
 
         //Tilføj System.out.print og bed brugeren indtaste hvilken medlem der skal ændres.
-        System.out.println("Choose the swimmer which result you'd like to update!");
+        System.out.println("Choose the swimmer which result you'd like to update!\n");
 
         //for-loop til at udskrive en liste over alle konkurrence medlemerne, så træneren kan vælge en af dem
         for(int i = 0; i < newCompMember.size(); i++){
-            System.out.println((i+ 1)+": "+newCompMember.get(i).getFirstName()+" "+
-                    newCompMember.get(i).getLastName()+" "+newCompMember.get(i).getDiscipline()+" "+
-                    newCompMember.get(i).getDistance()/*+" "+newCompMember.get(i).getBestTime()+" "+
-                    newCompMember.get(i).getDate()*/);
+
+            System.out.print((i +1)+": ");
+            System.out.print("First Name: " + newCompMember.get(i).getFirstName());
+            System.out.print(" Last Name: " + newCompMember.get(i).getLastName());
+            System.out.print(" Age: " + newCompMember.get(i).getAge());
+            System.out.print(" Discipline: " + newCompMember.get(i).getDiscipline());
+            System.out.print(" Distance: " + newCompMember.get(i).getDistance());
+            System.out.print(" BestTime: " + newCompMember.get(i).getBestTime());
+            System.out.print(" Date: " + newCompMember.get(i).getDate());
+
         }
 
 
@@ -31,10 +37,12 @@ public class TrainingResultManager {
         int indexOfCompetitive = console.nextInt();
 
         //den udskriver svømmerens oplysninger som den henter fra ArrayList newCompMember som indeholder alle konkurrence svømmere
-        System.out.println(newCompMember.get(indexOfCompetitive - 1));
+        System.out.println("\nFirstName: "+newCompMember.get(indexOfCompetitive - 1).getFirstName()+
+                " BestTime: "+newCompMember.get(indexOfCompetitive - 1).getBestTime()+" "+
+                " Date: "+newCompMember.get(indexOfCompetitive - 1).getDate());
 
 
-        System.out.println("Enter new BestTime");
+        System.out.println("\nEnter new BestTime");
         String bestTime = console.next();
 
         //kan man evt. bruge local time feature i den sammenhæng???
@@ -45,6 +53,10 @@ public class TrainingResultManager {
         //nu er de to statments ligegyldige da hver konkurrence svømmer har en hel liste over resultater
         newCompMember.get(indexOfCompetitive - 1).setBestTime(bestTime);
         newCompMember.get(indexOfCompetitive - 1).setDate(date);
+
+        System.out.println("\nFirstName: "+newCompMember.get(indexOfCompetitive - 1).getFirstName()+
+                " BestTime: "+newCompMember.get(indexOfCompetitive - 1).getBestTime()+" "+
+                " Date: "+newCompMember.get(indexOfCompetitive - 1).getDate());
 
         //System.out.println(newCompMember.get(indexOfCompetitive - 1));
 
