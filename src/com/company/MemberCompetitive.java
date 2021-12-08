@@ -7,13 +7,13 @@ import java.util.*;
 public class MemberCompetitive extends Member{
     protected String discipline;
     protected int distance;
-    protected double bestTime;
+    protected String bestTime;
     protected String date;
 
     protected ArrayList<Result> bestTimes;//Den er lavet om fra <String> til <Result>
     //Dvs. vi har et object der hedder Result
 
-    public MemberCompetitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, String discipline, int distance, double bestTime, String date) {
+    public MemberCompetitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, String discipline, int distance, String bestTime, String date) {
         super(firsName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
         this.discipline = discipline;
         this.distance = distance;
@@ -32,11 +32,11 @@ public class MemberCompetitive extends Member{
         this.discipline = discipline;
     }
 
-    public double getBestTime() {
+    public String getBestTime() {
         return bestTime;
     }
 
-    public void setBestTime(double bestTime) {
+    public void setBestTime(String bestTime) {
         this.bestTime = bestTime;
     }
 
