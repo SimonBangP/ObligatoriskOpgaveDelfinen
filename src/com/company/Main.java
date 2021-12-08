@@ -157,8 +157,11 @@ public static void main(String[] args) throws FileNotFoundException {
                        break;
 
                case 4:
-                  subscriptionManager.getSubscriptionSum(listManager.compMember, listManager.regMember);
-                       break;
+                   System.out.println("\n\n\n");
+                   System.out.print("This is the total amount of subscriptions ");
+                   System.out.print(subscriptionManager.getSubscriptionSum(listManager.compMember, listManager.regMember));
+                   System.out.println(" DKK \n\n\n");
+                   break;
 
                case 5:
                   trainingResultManager.updateBestTime(console, listManager.compMember);

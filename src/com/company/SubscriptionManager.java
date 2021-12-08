@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class SubscriptionManager {
 
-    private int sum1,sum2,sum3 = 0;
+    private int sum2,sum3 = 0;
 
     //traverserer Arraylist<Member> og returnerer summen af alle kontingenterne
     public int getSubscriptionSum(ArrayList<MemberCompetitive> newCompMember, ArrayList<MemberRegular> newRegMember) {
@@ -23,6 +23,6 @@ public class SubscriptionManager {
             int c =  newRegMember.get(i).getSubscriptionAmount();
             sum3 += c;
         }
-        return sum1+sum2+sum3;
+        return sum2+sum3;
     }
 }
