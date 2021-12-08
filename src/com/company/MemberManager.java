@@ -143,7 +143,7 @@ public class MemberManager {
             System.out.println("|  ENTER BEST TIME  |");
             System.out.println("|     EX: 02,35     |");
             System.out.println(" *******************");
-            double bestTime = console.nextDouble();
+            String bestTime = console.next();
 
 
             System.out.println(" *************************");
@@ -346,16 +346,16 @@ public class MemberManager {
                         break;
 
                     case 6:
-                        /*System.out.println("Please enter the new activity form");
+                        System.out.println("Please enter the new activity form");
                         String activityForm = console.next();
-                        while (!(activityForm.equals("active")&& !(activityForm.equals("passive")))){
+                        while (!(activityForm.equalsIgnoreCase("active") || !(activityForm.equalsIgnoreCase("passive")))){
                             System.out.println("The entered activity form is not valid, please enter again");
                             activityForm = console.next();
                         }
-                        if (activityForm.equals("passive")){
+                        if (activityForm.equalsIgnoreCase("passive")){
                             compMember.get(changeAnswer - 1).setSubscriptionAmount(500);
 
-                        }*/
+                        }
 
 
                         break;
