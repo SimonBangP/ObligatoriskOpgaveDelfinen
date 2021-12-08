@@ -37,7 +37,7 @@ public class FileManagerCompMember {
 
         }
 
-    public void readCompetitiveFile (ArrayList<MemberCompetitive> memberCompetitive, File competitiveFile) throws FileNotFoundException {
+    public void readCompetitiveFile (ArrayList<MemberCompetitive> memberCompetitive, File compMemberFile) throws FileNotFoundException {
         Scanner read = new Scanner(new File("Competitive.txt"));
 
         while (read.hasNextLine()) {
@@ -58,7 +58,7 @@ public class FileManagerCompMember {
             double besttime = lineScan.nextDouble();
             String date = lineScan.next();
 
-            //ArrayList<Result> besttimes =
+
 
 
 
