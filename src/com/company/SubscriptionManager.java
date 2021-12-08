@@ -6,19 +6,19 @@ import java.util.ArrayList;
 
 public class SubscriptionManager {
 
-    private int sum2, sum3 = 0;
+    private int sum1, sum2 = 0;
 
     public int getSubscriptionSum(ArrayList<MemberCompetitive> newCompMember, ArrayList<MemberRegular> newRegMember) {
 
 
         for (int i = 0; i < newCompMember.size(); i++) {
             int b = newCompMember.get(i).getSubscriptionAmount();
-            sum2 += b;
+            sum1 += b;
         }
         for (int i = 0; i < newRegMember.size(); i++) {
             int c = newRegMember.get(i).getSubscriptionAmount();
-            sum3 += c;
+            sum2 += c;
         }
-        return sum2 + sum3;
+        return sum1 + sum2;
     }
 }
