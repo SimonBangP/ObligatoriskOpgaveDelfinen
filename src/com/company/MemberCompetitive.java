@@ -11,7 +11,8 @@ public class MemberCompetitive extends Member{
     protected String date;
 
 
-    public MemberCompetitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm, int subscriptionAmount, String discipline, int distance, String bestTime, String date) {
+    public MemberCompetitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm,
+                             int subscriptionAmount, String discipline, int distance, String bestTime, String date) {
         super(firsName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
         this.discipline = discipline;
         this.distance = distance;
@@ -21,7 +22,14 @@ public class MemberCompetitive extends Member{
 
     }
 
+    @Override
+    public String toString() {
+        return
+                super.toString() + " discipline: " + discipline +
+                        ", distance: " + distance  +" Meter" +
+                        ", bestTime:= " + bestTime + " MM/SS" + ", date= " + date;
 
+    }
     public String getDiscipline() {
         return discipline;
     }
@@ -54,15 +62,5 @@ public class MemberCompetitive extends Member{
         this.distance = distance;
     }
 
-    @Override
-    public String toString() {
-        return
-                super.toString() +
 
-                "discipline= " + discipline +
-                ", distance(Meter)= " + distance  +" Meter" +
-                ", bestTime(MM/SS)= " + bestTime + " MM/SS" +
-                ", date= " + date;
-
-    }
 }
