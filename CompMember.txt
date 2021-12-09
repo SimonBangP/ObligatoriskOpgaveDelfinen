@@ -1,5 +1,8 @@
 Nina Kronborg 25 57483948 kronborg@com.com passive 500 butterfly 400 03,45 11.09.2021
 Bjarne Molbo 40 48394857 bmolbo@com.com active 1600 crawl 200 04,22 11.04.2020
-Ada Steiner 18 27384938 adass@dot.com active 0 breaststroke 800 07,45 11.11.2021
+Ada Steiner 18 27384938 adass@dot.com active 1600 breaststroke 800 07,45 11.11.2021
 Ole Olsen 18 47474758 ole@com.com passive 500 crawl 200 02,34 02.02.2021
-Ali Baba 18 28282838 alis@com.com active 0 butterfly 200 02.34 29.03.2020
+Ali Baba 18 28282838 alis@com.com active 1600 butterfly 200 02.34 29.03.2020
+Simon Bang 18 12345 simon@simon active 0 Butterfly 100 00,50 09/12-21
+Simon Simon 18 12345 simonsimon active 1600 Crawl 200 01,12 08/12-21
+bang bang 17 9876 simon active 1000 Backcrawl 900 04,32 07/12-21

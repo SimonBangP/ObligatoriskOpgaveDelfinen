@@ -73,7 +73,7 @@ public class MemberManager {
             if (age > 0 && age < 18) {
                 subscriptionAmount = 1000;
 
-            } else if (age > 18 && age < 60) {
+            } else if (age > 17 && age < 60) {
                 subscriptionAmount = 1600;
 
             } else if (age > 60) {
@@ -212,7 +212,7 @@ public class MemberManager {
                     regMember.get(changeAnswer - 1).setAge(age);
                     if (age < 18) {
                         regMember.get(changeAnswer - 1).setSubscriptionAmount(1000);
-                    } else if (age > 18 && age < 60) {
+                    } else if (age > 17 && age < 60) {
                         regMember.get(changeAnswer - 1).setSubscriptionAmount(1600);
                     } else if (age > 60) {
                         regMember.get(changeAnswer - 1).setSubscriptionAmount((1600 / 100) * 75);
@@ -307,7 +307,7 @@ public class MemberManager {
                     compMember.get(changeAnswer - 1).setAge(age);
                     if (age < 18) {
                         compMember.get(changeAnswer - 1).setSubscriptionAmount(1000);
-                    } else if (age > 18 && age < 60) {
+                    } else if (age > 17 && age < 60) {
                         compMember.get(changeAnswer - 1).setSubscriptionAmount(1600);
                     } else if (age > 60) {
                         compMember.get(changeAnswer - 1).setSubscriptionAmount((1600 / 100) * 75);
