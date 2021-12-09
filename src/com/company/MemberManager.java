@@ -102,15 +102,12 @@ public class MemberManager {
             else if (memberType == 2) {
                 swimmerAnswer = "competitive";
             }
-
         }
-
-
         if (swimmerAnswer.equals("regular")) {
-            System.out.println(" ******************************");
-            System.out.println("| ENTER THE APPROXIMATELY TIME |");
-            System.out.println("| THE SWIMMER IS GOING TO SWIM |");
-            System.out.println("|           PER WEEK           |");
+            System.out.println(" *******************************");
+            System.out.println("| ENTER THE APPROXIMATELY TIMES |");
+            System.out.println("| THE SWIMMER IS GOING TO SWIM  |");
+            System.out.println("|           PER WEEK            |");
             System.out.println(" ******************************");
             int swimPerWeek = console.nextInt();
 
@@ -120,9 +117,9 @@ public class MemberManager {
             System.out.println(" ******************");
             String favouriteDiscipline = console.next();
 
-
-            MemberRegular createRegMember = new MemberRegular(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, swimPerWeek, favouriteDiscipline);
-            newRegMember.add(createRegMember);
+                MemberRegular createRegMember = new MemberRegular(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount,
+                        swimPerWeek, favouriteDiscipline);
+                newRegMember.add(createRegMember);
 
 
         } else if (swimmerAnswer.equalsIgnoreCase("competitive")) {
@@ -152,7 +149,8 @@ public class MemberManager {
             System.out.println(" *************************");
             String date = console.next();
 
-            MemberCompetitive createCompMember = new MemberCompetitive(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount, dicipline, distance, bestTime, date);
+            MemberCompetitive createCompMember = new MemberCompetitive(firstName, lastName, age, phoneNumber, email, activityForm,
+                    subscriptionAmount, dicipline, distance, bestTime, date);
             newCompMember.add(createCompMember);
 
         }
@@ -200,7 +198,6 @@ public class MemberManager {
                     System.out.println("Please enter the new first name ");
                     String firstName = console.next();
                     regMember.get(changeAnswer - 1).setFirstName(firstName);
-
                     break;
 
                 case 2:
@@ -219,9 +216,7 @@ public class MemberManager {
                         regMember.get(changeAnswer - 1).setSubscriptionAmount(1600);
                     } else if (age > 60) {
                         regMember.get(changeAnswer - 1).setSubscriptionAmount((1600 / 100) * 75);
-
                     }
-
                     break;
 
                 case 4:
@@ -249,29 +244,22 @@ public class MemberManager {
                     } else {
                         regMember.get(changeAnswer - 1).setActivityForm("Passive");
                     }
-
-
                     break;
 
                 case 7:
                     System.out.println("Please enter the new favourite discipline");
                     String favouriteDiscipline = console.next();
                     regMember.get(changeAnswer - 1).setFavouriteDiscipline(favouriteDiscipline);
-
                     break;
 
                 case 8:
                     System.out.println("Please enter the new approximately swims per week");
                     int swimsPerWeek = console.nextInt();
                     regMember.get(changeAnswer - 1).setSwimsPerWeek(swimsPerWeek);
-
                     break;
 
                 default:
-
                     break;
-
-
             }
 
 
@@ -364,7 +352,8 @@ public class MemberManager {
 
 
     public void deleteMember(Scanner console, ArrayList<MemberRegular> regularMember, ArrayList<MemberCompetitive> compMember) {
-        System.out.println("Here you will be able to delete a member from the list and file. You should choose from which membertype you want to delete" +
+        System.out.println("Here you will be able to delete a member from the list and file. " +
+                "You should choose from which membertype you want to delete" +
                 "You can choose: regular or competitive");
 
         System.out.println("Please enter the member type you want to delete");
@@ -373,7 +362,6 @@ public class MemberManager {
         while (!(memberType.equalsIgnoreCase("regular")) && !(memberType.equalsIgnoreCase("competitive"))) {
             System.out.println("The entered is not a valid membertype, please try again");
             memberType = console.next();
-
         }
 
         if (memberType.equalsIgnoreCase("regular")) {
@@ -392,12 +380,11 @@ public class MemberManager {
             } else {
                 System.out.println("You didn't want to delete a member. Returning to main menu");
             }
-
-
         } else {
             for (int i = 0; i < compMember.size(); i++) {
                 System.out.println("member number " + (i + 1) + " :\n " + compMember.get(i).getFirstName() + " " + compMember.get(i).getLastName());
             }
+
             System.out.println("Please enter the number of the competitive member you want to delete");
             int deleteMember = console.nextInt();
             System.out.println("You are deleting member" + compMember.get(deleteMember - 1).getFirstName());
@@ -406,11 +393,9 @@ public class MemberManager {
 
             if (answer.equalsIgnoreCase("yes")) {
                 compMember.remove((deleteMember - 1));
-
             } else {
                 System.out.println("You didn't want to delete a member. Returning to main menu");
             }
-
         }
     }
 

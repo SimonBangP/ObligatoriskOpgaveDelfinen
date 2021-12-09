@@ -155,10 +155,7 @@ public static void main(String[] args) throws FileNotFoundException {
                        break;
 
                case 6:
-
-
                        break;
-
 
                 case 7:
                 fileManagerRegMember.writeRegMemberToFile(listManager.regMember, fileManagerRegMember.regMemberFile);
