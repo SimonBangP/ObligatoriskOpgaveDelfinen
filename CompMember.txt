@@ -4,3 +4,4 @@ Ada Steiner 18 27384938 adass@dot.com active 1600 breaststroke 800 07,45 11.11.2
 Ole Olsen 18 47474758 ole@com.com passive 500 crawl 200 02,34 02.02.2021
 Ali Baba 18 28282838 alis@com.com active 1600 butterfly 200 02.34 29.03.2020
 Lars Larsen 54 23242526 lars@larsen.dk ACTIVE 1600 Backcrawl 400 04,25 04/12-21
+Omer Mesut 24 12345 Omer@mesut.dk active 1600 Crawl 5000 59,57 09/12-21

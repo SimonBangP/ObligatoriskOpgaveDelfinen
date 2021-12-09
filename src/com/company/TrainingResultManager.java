@@ -19,6 +19,7 @@ public class TrainingResultManager {
             System.out.print(" Distance: " + newCompMember.get(i).getDistance());
             System.out.print(" BestTime: " + newCompMember.get(i).getBestTime());
             System.out.print(" Date: " + newCompMember.get(i).getDate());
+            System.out.println();
 
         }
         System.out.println("\nChoose the swimmer which result you'd like to update!\n");
