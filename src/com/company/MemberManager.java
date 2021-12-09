@@ -103,7 +103,7 @@ public class MemberManager {
                 swimmerAnswer = "competitive";
             }
         }
-        if (swimmerAnswer.equals("regular")) {
+        if (swimmerAnswer.equalsIgnoreCase("regular")) {
             System.out.println(" *******************************");
             System.out.println("| ENTER THE APPROXIMATELY TIMES |");
             System.out.println("| THE SWIMMER IS GOING TO SWIM  |");

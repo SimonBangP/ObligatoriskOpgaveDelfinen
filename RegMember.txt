@@ -2,3 +2,4 @@ Lars Larsen 53 47474646 lars@lol.com active 1600 2 crawl
 Lis Olsen 89 48392029 lis@lol.com active 1200 3 breaststroke
 Hans Hansen 34 39393948 Hans@gg.com active 1600 2 backcrawl
 Mao Bao 17 38493849 maobao@com.com active 1000 3 crawl
+Hans Hansen 47 31323334 Hans@hanshansen.dk passive 500 2 None

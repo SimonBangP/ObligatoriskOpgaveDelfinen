@@ -144,9 +144,7 @@ public static void main(String[] args) throws FileNotFoundException {
                        break;
 
                case 4:
-
                    System.out.print(subscriptionManager.getSubscriptionSum(listManager.compMember, listManager.regMember));
-
                    break;
 
                case 5:
