@@ -114,7 +114,7 @@ public static void main(String[] args) throws FileNotFoundException {
         System.out.println("               |      |   Enter 4    |                  |   Enter 5    |                    |   Enter 6    |           |");
         System.out.println("               |      |              |                  |              |                    |              |           |");
         System.out.println("               |      |     SEE      |                  |   REGISTER   |                    |     SEE      |           |");
-        System.out.println("               |      |   CURRENT    |                  |     NEW      |                    |     TOP      |           |");
+        System.out.println("               |      |    TOTAL     |                  |     NEW      |                    |     TOP      |           |");
         System.out.println("               |      | SUBSCRIPTION |                  |   TRAINING   |                    |     FIVE     |           |");
         System.out.println("               |      |    AMOUNT    |                  |    RESULT    |                    |   SWIMMERS   |           |");
         System.out.println("               |      |______________|                  |______________|                    |______________|           |");
@@ -144,10 +144,9 @@ public static void main(String[] args) throws FileNotFoundException {
                        break;
 
                case 4:
-                   System.out.println("\n\n\n");
-                   System.out.print("This is the total amount of subscriptions ");
+
                    System.out.print(subscriptionManager.getSubscriptionSum(listManager.compMember, listManager.regMember));
-                   System.out.println(" DKK \n\n\n");
+
                    break;
 
                case 5:

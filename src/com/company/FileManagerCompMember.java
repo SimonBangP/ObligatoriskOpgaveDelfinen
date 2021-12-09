@@ -12,32 +12,6 @@ public class FileManagerCompMember {
 
     File compMemberFile = new File("CompMember.txt");
 
-        public void writeCompetitiveToFile (ArrayList<MemberCompetitive> memberCompetitive, File compMemberFile) throws FileNotFoundException{
-
-            PrintStream writeToCompetitive = new PrintStream(compMemberFile);
-
-            for(int i = 0; i < memberCompetitive.size(); i++) {
-
-                String firstName = memberCompetitive.get(i).firstName;
-                String lastName = memberCompetitive.get(i).lastName;
-                int age = memberCompetitive.get(i).age;
-                int phoneNumber = memberCompetitive.get(i).phoneNumber;
-                String email = memberCompetitive.get(i).email;
-                String activityform = memberCompetitive.get(i).activityForm;
-                int subscriptionamount = memberCompetitive.get(i).subscriptionAmount;
-                String discipline = memberCompetitive.get(i).discipline;
-                int distance = memberCompetitive.get(i).distance;
-                String bestTime = memberCompetitive.get(i).bestTime;
-                String date = memberCompetitive.get(i).date;
-
-
-                writeToCompetitive.println(firstName + " " + lastName + " " + age + " " + phoneNumber + " " +
-                        email + " " + activityform + " " + subscriptionamount + " " + discipline + " " + distance + " " + bestTime +
-                        " " + date);
-            }
-
-        }
-
     public void readCompetitiveFile (ArrayList<MemberCompetitive> memberCompetitive, File compMemberFile) throws FileNotFoundException {
         Scanner read = new Scanner(compMemberFile);
 
@@ -68,5 +42,31 @@ public class FileManagerCompMember {
             memberCompetitive.add(newCompetitve);
 
         }
+    }
+
+    public void writeCompetitiveToFile (ArrayList<MemberCompetitive> memberCompetitive, File compMemberFile) throws FileNotFoundException{
+
+        PrintStream writeToCompetitive = new PrintStream(compMemberFile);
+
+        for(int i = 0; i < memberCompetitive.size(); i++) {
+
+            String firstName = memberCompetitive.get(i).firstName;
+            String lastName = memberCompetitive.get(i).lastName;
+            int age = memberCompetitive.get(i).age;
+            int phoneNumber = memberCompetitive.get(i).phoneNumber;
+            String email = memberCompetitive.get(i).email;
+            String activityform = memberCompetitive.get(i).activityForm;
+            int subscriptionamount = memberCompetitive.get(i).subscriptionAmount;
+            String discipline = memberCompetitive.get(i).discipline;
+            int distance = memberCompetitive.get(i).distance;
+            String bestTime = memberCompetitive.get(i).bestTime;
+            String date = memberCompetitive.get(i).date;
+
+
+            writeToCompetitive.println(firstName + " " + lastName + " " + age + " " + phoneNumber + " " +
+                    email + " " + activityform + " " + subscriptionamount + " " + discipline + " " + distance + " " + bestTime +
+                    " " + date);
+        }
+
     }
 }

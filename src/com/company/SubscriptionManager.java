@@ -8,7 +8,7 @@ public class SubscriptionManager {
 
     private int sum1, sum2 = 0;
 
-    public int getSubscriptionSum(ArrayList<MemberCompetitive> newCompMember, ArrayList<MemberRegular> newRegMember) {
+    public String getSubscriptionSum(ArrayList<MemberCompetitive> newCompMember, ArrayList<MemberRegular> newRegMember) {
 
 
         for (int i = 0; i < newCompMember.size(); i++) {
@@ -19,6 +19,6 @@ public class SubscriptionManager {
             int c = newRegMember.get(i).getSubscriptionAmount();
             sum2 += c;
         }
-        return sum1 + sum2;
+        return "\n\nTotal sum of all subscriptions : " + (sum1 + sum2) + " DKK \n\n\n\n";
     }
 }

@@ -12,27 +12,6 @@ public class FileManagerRegMember {
 
     File regMemberFile = new File("RegMember.txt");
 
-    public void writeRegMemberToFile(ArrayList<MemberRegular> regMember, File regMemberFile) throws FileNotFoundException {
-
-        PrintStream writeToMembersFile = new PrintStream(regMemberFile);
-
-        for (int i = 0; i < regMember.size(); i++) {
-
-            String firstName = regMember.get(i).firstName;
-            String lastName = regMember.get(i).lastName;
-            int age = regMember.get(i).age;
-            int phoneNumber = regMember.get(i).phoneNumber;
-            String email = regMember.get(i).email;
-            String activityform = regMember.get(i).activityForm;
-            int subscriptionamount = regMember.get(i).subscriptionAmount;
-            int swimsPerWeek = regMember.get(i).swimsPerWeek;
-            String favouriteDiscipline = regMember.get(i).favouriteDiscipline;
-
-
-            writeToMembersFile.println(firstName + " " + lastName + " " + age + " " + phoneNumber + " " +
-                    email + " " + activityform + " " + subscriptionamount + " " +  swimsPerWeek + " " + favouriteDiscipline );
-        }
-    }
     public void readRegMemberFile(ArrayList<MemberRegular> regMembers, File regMemberFile) throws FileNotFoundException {
         Scanner read = new Scanner(regMemberFile);
 
@@ -55,6 +34,28 @@ public class FileManagerRegMember {
 
             regMembers.add(newRegMember);
 
+        }
+    }
+
+    public void writeRegMemberToFile(ArrayList<MemberRegular> regMember, File regMemberFile) throws FileNotFoundException {
+
+        PrintStream writeToMembersFile = new PrintStream(regMemberFile);
+
+        for (int i = 0; i < regMember.size(); i++) {
+
+            String firstName = regMember.get(i).firstName;
+            String lastName = regMember.get(i).lastName;
+            int age = regMember.get(i).age;
+            int phoneNumber = regMember.get(i).phoneNumber;
+            String email = regMember.get(i).email;
+            String activityform = regMember.get(i).activityForm;
+            int subscriptionamount = regMember.get(i).subscriptionAmount;
+            int swimsPerWeek = regMember.get(i).swimsPerWeek;
+            String favouriteDiscipline = regMember.get(i).favouriteDiscipline;
+
+
+            writeToMembersFile.println(firstName + " " + lastName + " " + age + " " + phoneNumber + " " +
+                    email + " " + activityform + " " + subscriptionamount + " " +  swimsPerWeek + " " + favouriteDiscipline );
         }
     }
 }

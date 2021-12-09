@@ -1,1 +1,5 @@
-test test 1 1234 test@test active 1000 crawl 800 04.33 2021/11/22
+Nina Kronborg 25 57483948 kronborg@com.com passive 500 butterfly 400 03,45 11.09.2021
+Bjarne Molbo 40 48394857 bmolbo@com.com active 1600 crawl 200 04,22 11.04.2020
+Ada Steiner 18 27384938 adass@dot.com active 0 breaststroke 800 07,45 11.11.2021
+Ole Olsen 18 47474758 ole@com.com passive 500 crawl 200 02,34 02.02.2021
+Ali Baba 18 28282838 alis@com.com active 0 butterfly 200 02.34 29.03.2020
