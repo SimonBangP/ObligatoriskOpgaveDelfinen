@@ -11,9 +11,9 @@ public class MemberCompetitive extends Member{
     protected String date;
 
 
-    public MemberCompetitive(String firsName, String lastName, int age, int phoneNumber, String email, String activityForm,
+    public MemberCompetitive(String firstName, String lastName, int age, int phoneNumber, String email, String activityForm,
                              int subscriptionAmount, String discipline, int distance, String bestTime, String date) {
-        super(firsName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
+        super(firstName, lastName, age, phoneNumber, email, activityForm, subscriptionAmount);
         this.discipline = discipline;
         this.distance = distance;
         this.bestTime = bestTime;
